@@ -1322,7 +1322,12 @@
       "printPdf": "Imprimir / PDF",
       "exportData": "Exportar datos",
       "moreActions": "Más acciones",
-      "shareLink": "Compartir enlace"
+      "shareLink": "Compartir enlace",
+      "sources": {
+        "summary": "Fuentes y ventanas · {{count}} grupos",
+        "note": "Las ventanas de las fuentes varían; esto no es un total de 24 horas.",
+        "footer": "No es una entrada del CII/CRI."
+      }
     },
     "relatedAssets": {
       "pipeline": "Ducto",
@@ -3207,6 +3212,34 @@
         "change365": "En 12 meses",
         "measured": "Medido",
         "sparkline": "Nivel del agua en 36 meses"
+      },
+      "nextPass": {
+        "label": "Próximo paso de ICESat-2",
+        "loading": "Cargando…",
+        "at": "{{date}} (previsto con datos orbitales del {{epoch}}; las nubes pueden bloquear el lidar)",
+        "none": "Sin medición en este periodo (hasta el {{date}}); datos orbitales del {{epoch}}",
+        "unavailable": "Datos orbitales no disponibles"
+      },
+      "siteContext": {
+        "label": "Embalse estratégico en este lugar"
+      },
+      "energyContext": {
+        "heading": "Embalses estratégicos",
+        "hydro": "Hidroeléctrica {{share}} % de la energía primaria"
+      },
+      "countryEvidence": {
+        "heading": "Niveles de agua",
+        "empty": "Ningún embalse estratégico de este país está fuera de su referencia estacional en su último paso.",
+        "measured": "Medido el {{date}}"
+      },
+      "card": {
+        "measured": "Medido {{date}} · {{age}}",
+        "noCrossing": "ninguno en esta ventana (hasta {{date}})",
+        "crossing": "Paso previsto de ICESat-2",
+        "summary": "{{beyond}} de {{total}} embalses fuera de la base estacional",
+        "latestPass": "último paso de ICESat-2 {{date}}",
+        "sparkline": "Nivel de 36 meses con la base estacional como línea discontinua",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC). Niveles de superficie del agua por lidar de pasos fechados, no lecturas en vivo ni volúmenes."
       }
     },
     "gridDisruptionClock": {
@@ -3295,7 +3328,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED (verificado)",
       "gdelt": "GDELT",
       "records": "registros",
       "mediaSignal": "Señal mediática no verificada",
@@ -5332,6 +5364,50 @@
       "densityTip_many": "{{count}} pasadas desde {{start}} · {{names}}",
       "densityTip_other": "{{count}} pasadas desde {{start}} · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "Sitios monitoreados · próximas {{hours}} h",
+      "projecting": "Calculando pasos…",
+      "notLoaded": "Haz clic en el satélite de nuevo; sus elementos orbitales no están cargados.",
+      "failed": "Haz clic en el satélite de nuevo para reintentar; el cálculo de pasos falló.",
+      "viewFailed": "Haz clic en el satélite de nuevo para reintentar; la lista de sitios no se cargó.",
+      "unavailable": "Haz clic en el satélite de nuevo para reintentar; la geometría de pasos rechazó estos elementos orbitales.",
+      "signals": "Satélite de inteligencia de señales. Sin sensor de imágenes, por lo que no se modela cobertura terrestre.",
+      "noProfile": "Sin perfil de sensor para este satélite, por lo que su cobertura terrestre no se modela.",
+      "geostationary": "Geoestacionario: fijo sobre una longitud, por lo que no hay pasos que listar.",
+      "badElements": "Los elementos orbitales no son legibles.",
+      "none": "Ningún sitio monitoreado dentro de su huella en {{hours}} h.",
+      "utc": "{{time}} UTC",
+      "inMinutes": "en {{minutes}} min",
+      "inHours": "en {{hours}} h {{minutes}} min",
+      "offTrack": "a {{km}} km de la traza terrestre",
+      "swathEdge": "en el borde de la franja",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "Tipo",
+        "operator": "Operador",
+        "over": "Sobre",
+        "ocean": "Océano",
+        "altBand": "Banda alt.",
+        "inclination": "Incl.",
+        "velocity": "Velocidad",
+        "types": {
+          "sar": "Imágenes SAR",
+          "optical": "Imágenes ópticas",
+          "military": "Militar",
+          "sigint": "SIGINT",
+          "signals": "Señales"
+        }
+      },
+      "tooOld_one": "Los elementos orbitales tienen {{count}} día de antigüedad, demasiado antiguos para calcular pasos.",
+      "tooOld_many": "Los elementos orbitales tienen {{count}} días de antigüedad, demasiado antiguos para calcular pasos.",
+      "tooOld_other": "Los elementos orbitales tienen {{count}} días de antigüedad, demasiado antiguos para calcular pasos.",
+      "count_one": "{{count}} sitio dentro de la huella {{family}}",
+      "count_many": "{{count}} sitios dentro de la huella {{family}}",
+      "count_other": "{{count}} sitios dentro de la huella {{family}}",
+      "passes_one": "{{count}} paso",
+      "passes_many": "{{count}} pasos",
+      "passes_other": "{{count}} pasos"
+    },
     "sheet": {
       "heading": "Pruebas de imágenes satelitales",
       "window": "Últimos {{days}} días, próximas {{hours}} h",
@@ -5456,6 +5532,38 @@
     },
     "target": {
       "acquired": "ADQUIRIDO {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "Imágenes satelitales",
+      "loading": "Consultando archivos satelitales…",
+      "latest": "Imagen más reciente",
+      "nextPass": "Próximo paso",
+      "noImage": "No se encontró ninguna imagen reciente",
+      "noPass": "Ningún paso previsto en 72 horas",
+      "openEvidence": "Abrir evidencias",
+      "imageAlt": "Vista satelital de {{source}}",
+      "unavailable": "No se pudieron cargar las imágenes satelitales.",
+      "fire": {
+        "title": "Detección de incendios por satélite",
+        "detected": "Detectado",
+        "satellite": "Satélite",
+        "confidence": "Confianza",
+        "confidenceHigh": "Alta",
+        "confidenceNominal": "Media",
+        "confidenceLow": "Baja",
+        "power": "Potencia del incendio",
+        "powerValue": "{{value}} MW",
+        "region": "Región",
+        "source": "Fuente",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "Mosaico diario",
+        "mosaicLoading": "Verificando NASA GIBS…",
+        "mosaicCaption": "Composición de los pases de {{source}} del día para {{date}}; el incendio puede estar oculto por nubes o humo.",
+        "mosaicNone": "NASA GIBS no tiene mosaico de {{source}} para {{date}}.",
+        "mosaicNoLayer": "No hay mosaico diario disponible para este satélite.",
+        "mosaicUnavailable": "El mosaico diario no se cargó.",
+        "mosaicAlt": "Mosaico diario de {{source}} de NASA GIBS para {{date}}"
+      }
     }
   },
   "settings": {

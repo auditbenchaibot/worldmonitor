@@ -1209,7 +1209,12 @@
       "shareLink": "Chia sẻ liên kết",
       "shareStory": "Chia sẻ bài viết",
       "printPdf": "In / PDF",
-      "exportData": "Xuất dữ liệu"
+      "exportData": "Xuất dữ liệu",
+      "sources": {
+        "summary": "Nguồn và khung thời gian · {{count}} nhóm",
+        "note": "Khung thời gian của các nguồn khác nhau; đây không phải tổng 24 giờ.",
+        "footer": "Không phải đầu vào của CII/CRI."
+      }
     },
     "relatedAssets": {
       "pipeline": "Đường ống",
@@ -3165,6 +3170,34 @@
         "change365": "Trong 12 tháng",
         "measured": "Ngày đo",
         "sparkline": "Mực nước trong 36 tháng"
+      },
+      "nextPass": {
+        "label": "Lần bay qua tiếp theo của ICESat-2",
+        "loading": "Đang tải…",
+        "at": "{{date}} (dự đoán từ dữ liệu quỹ đạo ngày {{epoch}}; mây có thể chặn lidar)",
+        "none": "Không có phép đo trong khoảng này (đến {{date}}); dữ liệu quỹ đạo ngày {{epoch}}",
+        "unavailable": "Không có dữ liệu quỹ đạo"
+      },
+      "siteContext": {
+        "label": "Hồ chứa chiến lược tại địa điểm này"
+      },
+      "energyContext": {
+        "heading": "Hồ chứa chiến lược",
+        "hydro": "Thủy điện {{share}}% năng lượng sơ cấp"
+      },
+      "countryEvidence": {
+        "heading": "Mực nước",
+        "empty": "Không hồ chứa chiến lược nào ở quốc gia này nằm ngoài đường cơ sở theo mùa ở lần đi qua gần nhất.",
+        "measured": "Đo ngày {{date}}"
+      },
+      "card": {
+        "measured": "Đo {{date}} · {{age}}",
+        "noCrossing": "không có trong khoảng này (đến {{date}})",
+        "crossing": "Lượt bay qua dự kiến của ICESat-2",
+        "summary": "{{beyond}}/{{total}} hồ chứa ngoài đường cơ sở theo mùa",
+        "latestPass": "lượt ICESat-2 gần nhất {{date}}",
+        "sparkline": "Mực nước 36 tháng, đường cơ sở theo mùa là nét đứt",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC). Mực mặt nước bằng lidar từ các lượt có ngày, không phải số đo trực tiếp hay dung tích."
       }
     },
     "gridDisruptionClock": {
@@ -3254,7 +3287,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED (đã xác minh)",
       "gdelt": "GDELT",
       "records": "bản ghi",
       "mediaSignal": "Tín hiệu truyền thông chưa xác minh",
@@ -5274,6 +5306,44 @@
       "away": "{{km}} km",
       "densityTip_other": "{{count}} lượt bay qua từ {{start}} · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "Các địa điểm được theo dõi · {{hours}} giờ tới",
+      "projecting": "Đang tính các lượt bay qua…",
+      "notLoaded": "Nhấp lại vào vệ tinh; các phần tử quỹ đạo của nó chưa được tải.",
+      "failed": "Nhấp lại vào vệ tinh để thử lại; tính toán lượt bay qua không thành công.",
+      "viewFailed": "Nhấp lại vào vệ tinh để thử lại; danh sách địa điểm không tải được.",
+      "unavailable": "Nhấp lại vào vệ tinh để thử lại; hình học lượt bay qua đã từ chối các phần tử quỹ đạo này.",
+      "signals": "Vệ tinh tình báo tín hiệu. Không có thiết bị chụp ảnh, do đó vùng quan sát mặt đất không được mô phỏng.",
+      "noProfile": "Không có hồ sơ cảm biến cho vệ tinh này, do đó vùng quan sát mặt đất của nó không được mô phỏng.",
+      "geostationary": "Địa tĩnh: cố định phía trên một kinh độ, do đó không có lượt bay qua nào để liệt kê.",
+      "badElements": "Các phần tử quỹ đạo không thể đọc được.",
+      "none": "Không có địa điểm được theo dõi nào trong vùng quan sát của vệ tinh trong {{hours}} giờ tới.",
+      "utc": "{{time}} UTC",
+      "inMinutes": "sau {{minutes}} phút",
+      "inHours": "sau {{hours}} giờ {{minutes}} phút",
+      "offTrack": "cách vết mặt đất {{km}} km",
+      "swathEdge": "tại mép dải quét",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "Loại",
+        "operator": "Nhà khai thác",
+        "over": "Phía trên",
+        "ocean": "Đại dương",
+        "altBand": "Dải độ cao",
+        "inclination": "Độ nghiêng",
+        "velocity": "Vận tốc",
+        "types": {
+          "sar": "Chụp ảnh SAR",
+          "optical": "Chụp ảnh quang học",
+          "military": "Quân sự",
+          "sigint": "SIGINT",
+          "signals": "Tình báo tín hiệu"
+        }
+      },
+      "tooOld_other": "Các phần tử quỹ đạo đã có từ {{count}} ngày trước, quá cũ để tính các lượt bay qua.",
+      "count_other": "{{count}} địa điểm trong vùng quan sát của {{family}}",
+      "passes_other": "{{count}} lượt bay qua"
+    },
     "sheet": {
       "heading": "Bằng chứng ảnh vệ tinh",
       "window": "{{days}} ngày qua, {{hours}} h tới",
@@ -5390,6 +5460,38 @@
     },
     "target": {
       "acquired": "ĐÃ CHỤP {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "Ảnh vệ tinh",
+      "loading": "Đang kiểm tra kho lưu trữ vệ tinh…",
+      "latest": "Ảnh mới nhất",
+      "nextPass": "Lượt bay qua tiếp theo",
+      "noImage": "Không tìm thấy ảnh gần đây",
+      "noPass": "Không có lượt bay qua trong 72 giờ",
+      "openEvidence": "Mở bằng chứng",
+      "imageAlt": "Ảnh vệ tinh từ {{source}}",
+      "unavailable": "Không tải được ảnh vệ tinh.",
+      "fire": {
+        "title": "Phát hiện cháy từ vệ tinh",
+        "detected": "Được phát hiện",
+        "satellite": "Vệ tinh",
+        "confidence": "Độ tin cậy",
+        "confidenceHigh": "Cao",
+        "confidenceNominal": "Trung bình",
+        "confidenceLow": "Thấp",
+        "power": "Công suất cháy",
+        "powerValue": "{{value}} MW",
+        "region": "Khu vực",
+        "source": "Nguồn",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "Ảnh ghép hàng ngày",
+        "mosaicLoading": "Đang kiểm tra NASA GIBS…",
+        "mosaicCaption": "Ảnh ghép từ các lượt quét {{source}} trong ngày {{date}}; cháy có thể bị che khuất bởi mây hoặc khói.",
+        "mosaicNone": "NASA GIBS không có ảnh ghép {{source}} cho {{date}}.",
+        "mosaicNoLayer": "Không có ảnh ghép hàng ngày cho vệ tinh này.",
+        "mosaicUnavailable": "Ảnh ghép hàng ngày không tải được.",
+        "mosaicAlt": "Ảnh ghép hàng ngày NASA GIBS {{source}} cho {{date}}"
+      }
     }
   },
   "settings": {

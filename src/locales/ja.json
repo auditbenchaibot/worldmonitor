@@ -1209,7 +1209,12 @@
       "shareLink": "リンクを共有",
       "shareStory": "ストーリーを共有",
       "printPdf": "印刷 / PDF",
-      "exportData": "データをエクスポート"
+      "exportData": "データをエクスポート",
+      "sources": {
+        "summary": "ソースと期間 · {{count}} 系統",
+        "note": "ソースの期間は異なります。24時間の合計ではありません。",
+        "footer": "CII/CRI の入力ではありません。"
+      }
     },
     "relatedAssets": {
       "pipeline": "パイプライン",
@@ -3165,6 +3170,34 @@
         "change365": "12か月間",
         "measured": "測定日",
         "sparkline": "36か月の水位"
+      },
+      "nextPass": {
+        "label": "次のICESat-2通過",
+        "loading": "読み込み中…",
+        "at": "{{date}}（{{epoch}}の軌道データによる予測。雲でライダーが遮られる場合があります）",
+        "none": "この期間に測定なし（{{date}}まで）。{{epoch}}の軌道データ",
+        "unavailable": "軌道データを取得できません"
+      },
+      "siteContext": {
+        "label": "この地点の戦略的貯水池"
+      },
+      "energyContext": {
+        "heading": "戦略的貯水池",
+        "hydro": "水力は一次エネルギーの{{share}}%"
+      },
+      "countryEvidence": {
+        "heading": "水位",
+        "empty": "この国の戦略的貯水池で、最新の通過時に季節的基準線を外れているものはありません。",
+        "measured": "{{date}} 計測"
+      },
+      "card": {
+        "measured": "計測 {{date}} · {{age}}",
+        "noCrossing": "この期間内になし（{{date}}まで）",
+        "crossing": "ICESat-2 の予測通過",
+        "summary": "{{total}} 貯水池中 {{beyond}} が季節基準外",
+        "latestPass": "最新の ICESat-2 通過 {{date}}",
+        "sparkline": "36か月の水位（季節基準は破線）",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC)。日付付き通過のライダー水面高で、リアルタイム値や貯水量ではありません。"
       }
     },
     "gridDisruptionClock": {
@@ -3254,7 +3287,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED（検証済）",
       "gdelt": "GDELT",
       "records": "件の記録",
       "mediaSignal": "未確認のメディア情報",
@@ -5274,6 +5306,44 @@
       "away": "{{km}} km",
       "densityTip_other": "{{start}}から{{count}}件のパス · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "監視対象地点 · 今後{{hours}}時間",
+      "projecting": "通過を計算中…",
+      "notLoaded": "衛星をもう一度クリックしてください。軌道要素が読み込まれていません。",
+      "failed": "衛星をもう一度クリックして再試行してください。通過の計算に失敗しました。",
+      "viewFailed": "衛星をもう一度クリックして再試行してください。地点一覧を読み込めませんでした。",
+      "unavailable": "衛星をもう一度クリックして再試行してください。通過ジオメトリの計算でこの軌道要素を使用できませんでした。",
+      "signals": "信号情報収集（SIGINT）衛星。撮像センサーがないため、地上の観測範囲はモデル化されていません。",
+      "noProfile": "この衛星のセンサープロファイルがないため、地上の観測範囲はモデル化されていません。",
+      "geostationary": "静止衛星：特定の経度上に固定されているため、表示する通過はありません。",
+      "badElements": "軌道要素が読み取れません。",
+      "none": "{{hours}}時間以内に観測範囲に入る監視対象地点はありません。",
+      "utc": "{{time}} UTC",
+      "inMinutes": "{{minutes}}分後",
+      "inHours": "{{hours}}時間{{minutes}}分後",
+      "offTrack": "地上軌跡から {{km}} km",
+      "swathEdge": "観測幅の端",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "種別",
+        "operator": "運用者",
+        "over": "上空",
+        "ocean": "海洋",
+        "altBand": "高度帯",
+        "inclination": "軌道傾斜角",
+        "velocity": "速度",
+        "types": {
+          "sar": "SAR撮像",
+          "optical": "光学撮像",
+          "military": "軍事",
+          "sigint": "SIGINT",
+          "signals": "信号情報"
+        }
+      },
+      "tooOld_other": "軌道要素が{{count}}日前のもので、通過の計算には古すぎます。",
+      "count_other": "{{family}}の観測範囲内に{{count}}地点",
+      "passes_other": "{{count}}回の通過"
+    },
     "sheet": {
       "heading": "衛星画像の証拠",
       "window": "過去{{days}}日間、今後{{hours}}時間",
@@ -5390,6 +5460,38 @@
     },
     "target": {
       "acquired": "撮影 {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "衛星画像",
+      "loading": "衛星アーカイブを確認中…",
+      "latest": "最新の画像",
+      "nextPass": "次の通過",
+      "noImage": "最近の画像は見つかりません",
+      "noPass": "72 時間以内に通過予定はありません",
+      "openEvidence": "証拠を開く",
+      "imageAlt": "{{source}} による衛星画像",
+      "unavailable": "衛星画像を読み込めませんでした。",
+      "fire": {
+        "title": "衛星火災検出",
+        "detected": "検出日時",
+        "satellite": "衛星",
+        "confidence": "信頼度",
+        "confidenceHigh": "高",
+        "confidenceNominal": "標準",
+        "confidenceLow": "低",
+        "power": "火災の規模",
+        "powerValue": "{{value}} MW",
+        "region": "地域",
+        "source": "ソース",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "日次モザイク",
+        "mosaicLoading": "NASA GIBSを確認中…",
+        "mosaicCaption": "{{date}}に{{source}}が通過した観測を合成した日次画像です。火災は雲や煙に隠れている可能性があります。",
+        "mosaicNone": "NASA GIBSには{{date}}の{{source}}モザイクがありません。",
+        "mosaicNoLayer": "この衛星の日次モザイクは利用できません。",
+        "mosaicUnavailable": "日次モザイクが読み込まれませんでした。",
+        "mosaicAlt": "NASA GIBS {{source}} {{date}}の日次モザイク"
+      }
     }
   },
   "settings": {

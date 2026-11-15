@@ -772,7 +772,12 @@
       "printPdf": "Afdrukken / PDF",
       "exportData": "Gegevens exporteren",
       "moreActions": "Meer acties",
-      "shareLink": "Link delen"
+      "shareLink": "Link delen",
+      "sources": {
+        "summary": "Bronnen en vensters · {{count}} groepen",
+        "note": "Bronvensters verschillen; dit is geen 24-uurstotaal.",
+        "footer": "Geen invoer voor CII/CRI."
+      }
     },
     "relatedAssets": {
       "pipeline": "Pijpleiding",
@@ -2802,6 +2807,34 @@
         "change365": "In 12 maanden",
         "measured": "Gemeten",
         "sparkline": "Waterstand over 36 maanden"
+      },
+      "nextPass": {
+        "label": "Volgende ICESat-2-overkomst",
+        "loading": "Laden…",
+        "at": "{{date}} (voorspeld uit baangegevens van {{epoch}}; bewolking kan de lidar blokkeren)",
+        "none": "Geen meting in deze periode (tot {{date}}); baangegevens van {{epoch}}",
+        "unavailable": "Baangegevens niet beschikbaar"
+      },
+      "siteContext": {
+        "label": "Strategisch stuwmeer op deze locatie"
+      },
+      "energyContext": {
+        "heading": "Strategische stuwmeren",
+        "hydro": "Waterkracht {{share}}% van primaire energie"
+      },
+      "countryEvidence": {
+        "heading": "Waterstanden",
+        "empty": "Geen strategisch stuwmeer in dit land ligt bij de laatste overkomst buiten zijn seizoensbasislijn.",
+        "measured": "Gemeten op {{date}}"
+      },
+      "card": {
+        "measured": "Gemeten {{date}} · {{age}}",
+        "noCrossing": "geen in dit venster (tot {{date}})",
+        "crossing": "Voorspelde ICESat-2-overkomst",
+        "summary": "{{beyond}} van {{total}} stuwmeren buiten de seizoensbasis",
+        "latestPass": "laatste ICESat-2-overkomst {{date}}",
+        "sparkline": "Peil over 36 maanden met de seizoensbasis als stippellijn",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC). Lidar-waterstanden uit gedateerde overkomsten, geen live metingen of opslagvolumes."
       }
     },
     "gridDisruptionClock": {
@@ -2890,7 +2923,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED (geverifieerd)",
       "gdelt": "GDELT",
       "records": "vermeldingen",
       "mediaSignal": "Onbevestigd mediasignaal",
@@ -5303,6 +5335,47 @@
       "densityTip_one": "{{count}} passage vanaf {{start}} · {{names}}",
       "densityTip_other": "{{count}} passages vanaf {{start}} · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "Gevolgde locaties · volgende {{hours}} u",
+      "projecting": "Overkomsten worden berekend…",
+      "notLoaded": "Klik opnieuw op de satelliet; de baanelementen zijn niet geladen.",
+      "failed": "Klik opnieuw op de satelliet om opnieuw te proberen; de berekening van de overkomsten is mislukt.",
+      "viewFailed": "Klik opnieuw op de satelliet om opnieuw te proberen; de locatielijst is niet geladen.",
+      "unavailable": "Klik opnieuw op de satelliet om opnieuw te proberen; de overkomstgeometrie heeft deze baanelementen afgewezen.",
+      "signals": "Satelliet voor signaalinlichtingen. Geen beeldsensor, dus er wordt geen gronddekking gemodelleerd.",
+      "noProfile": "Geen sensorprofiel voor deze satelliet, dus de gronddekking wordt niet gemodelleerd.",
+      "geostationary": "Geostationair: vast boven één lengtegraad, dus geen overkomsten om te tonen.",
+      "badElements": "De baanelementen zijn onleesbaar.",
+      "none": "Binnen {{hours}} u valt geen gevolgde locatie binnen de voetafdruk.",
+      "utc": "{{time}} UTC",
+      "inMinutes": "over {{minutes}} min",
+      "inHours": "over {{hours}} u {{minutes}} min",
+      "offTrack": "{{km}} km van het grondspoor",
+      "swathEdge": "aan de rand van de opnamestrook",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "Type",
+        "operator": "Exploitant",
+        "over": "Boven",
+        "ocean": "Oceaan",
+        "altBand": "Hoogtebereik",
+        "inclination": "Incl.",
+        "velocity": "Snelheid",
+        "types": {
+          "sar": "SAR-beeldvorming",
+          "optical": "Optische beeldvorming",
+          "military": "Militair",
+          "sigint": "SIGINT",
+          "signals": "Signaalinlichtingen"
+        }
+      },
+      "tooOld_one": "De baanelementen zijn {{count}} dag oud, te oud om overkomsten te berekenen.",
+      "tooOld_other": "De baanelementen zijn {{count}} dagen oud, te oud om overkomsten te berekenen.",
+      "count_one": "{{count}} gevolgde locatie in de {{family}}-voetafdruk",
+      "count_other": "{{count}} gevolgde locaties in de {{family}}-voetafdruk",
+      "passes_one": "{{count}} overkomst",
+      "passes_other": "{{count}} overkomsten"
+    },
     "sheet": {
       "heading": "Bewijsmateriaal uit satellieten",
       "window": "Afgelopen {{days}} dagen, komende {{hours}} u",
@@ -5423,6 +5496,38 @@
     },
     "target": {
       "acquired": "OPGENOMEN {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "Satellietbeelden",
+      "loading": "Satellietarchieven worden gecontroleerd…",
+      "latest": "Nieuwste beeld",
+      "nextPass": "Volgende overkomst",
+      "noImage": "Geen recent beeld gevonden",
+      "noPass": "Geen overkomst binnen 72 uur",
+      "openEvidence": "Bewijs openen",
+      "imageAlt": "Satellietbeeld van {{source}}",
+      "unavailable": "Satellietbeelden konden niet worden geladen.",
+      "fire": {
+        "title": "Satellietbranddetectie",
+        "detected": "Gedetecteerd",
+        "satellite": "Satelliet",
+        "confidence": "Betrouwbaarheid",
+        "confidenceHigh": "Hoog",
+        "confidenceNominal": "Gemiddeld",
+        "confidenceLow": "Laag",
+        "power": "Brandvermogen",
+        "powerValue": "{{value}} MW",
+        "region": "Regio",
+        "source": "Bron",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "Dagelijks mozaïek",
+        "mosaicLoading": "NASA GIBS controleren…",
+        "mosaicCaption": "Een samengesteld beeld van de {{source}}-passes van {{date}}; het vuur kan verborgen zijn door wolken of rook.",
+        "mosaicNone": "NASA GIBS heeft geen {{source}}-mozaïek voor {{date}}.",
+        "mosaicNoLayer": "Er is geen dagelijks mozaïek beschikbaar voor deze satelliet.",
+        "mosaicUnavailable": "Het dagelijks mozaïek is niet geladen.",
+        "mosaicAlt": "Dagelijks NASA GIBS-mozaïek ({{source}}) voor {{date}}"
+      }
     }
   },
   "settings": {

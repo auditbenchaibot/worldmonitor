@@ -1209,7 +1209,12 @@
       "shareLink": "分享链接",
       "shareStory": "分享报道",
       "printPdf": "打印 / PDF",
-      "exportData": "导出数据"
+      "exportData": "导出数据",
+      "sources": {
+        "summary": "来源与时间窗 · {{count}} 类",
+        "note": "各来源时间窗不同；这不是 24 小时总计。",
+        "footer": "不作为 CII/CRI 的输入。"
+      }
     },
     "relatedAssets": {
       "pipeline": "管道",
@@ -3165,6 +3170,34 @@
         "change365": "12 个月内",
         "measured": "测量时间",
         "sparkline": "36 个月水位"
+      },
+      "nextPass": {
+        "label": "ICESat-2 下次过境",
+        "loading": "加载中…",
+        "at": "{{date}}（根据 {{epoch}} 的轨道数据预测；云层可能遮挡激光雷达）",
+        "none": "此时段内无测量（至 {{date}}）；轨道数据日期 {{epoch}}",
+        "unavailable": "轨道数据不可用"
+      },
+      "siteContext": {
+        "label": "此地点的战略水库"
+      },
+      "energyContext": {
+        "heading": "战略水库",
+        "hydro": "水电占一次能源的 {{share}}%"
+      },
+      "countryEvidence": {
+        "heading": "水位",
+        "empty": "该国没有任何战略水库在最近一次过境时超出其季节基线。",
+        "measured": "测量于 {{date}}"
+      },
+      "card": {
+        "measured": "测量于 {{date}} · {{age}}",
+        "noCrossing": "此窗口内无（至 {{date}}）",
+        "crossing": "ICESat-2 预测过境",
+        "summary": "{{total}} 座水库中 {{beyond}} 座超出季节基线",
+        "latestPass": "最近 ICESat-2 过境 {{date}}",
+        "sparkline": "36 个月水位，季节基线为虚线",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC)。来自带日期过境的激光雷达水面高度，并非实时读数或库容。"
       }
     },
     "gridDisruptionClock": {
@@ -3254,7 +3287,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED（已验证）",
       "gdelt": "GDELT",
       "records": "条记录",
       "mediaSignal": "未经核实的媒体信号",
@@ -5274,6 +5306,44 @@
       "away": "{{km}} 公里",
       "densityTip_other": "自 {{start}} 起 {{count}} 次过境 · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "监视地点 · 未来 {{hours}} 小时",
+      "projecting": "正在计算过境…",
+      "notLoaded": "再次点击卫星；其轨道根数未加载。",
+      "failed": "再次点击卫星以重试；过境计算失败。",
+      "viewFailed": "再次点击卫星以重试；地点列表未能加载。",
+      "unavailable": "再次点击卫星以重试；过境几何计算拒绝了这些轨道根数。",
+      "signals": "信号情报卫星。没有成像设备，因此不模拟地面覆盖范围。",
+      "noProfile": "此卫星没有传感器参数，因此不模拟其地面覆盖范围。",
+      "geostationary": "地球静止轨道：固定在某一经度上方，因此没有可列出的过境。",
+      "badElements": "轨道根数无法读取。",
+      "none": "未来 {{hours}} 小时内，其覆盖范围内没有监视地点。",
+      "utc": "{{time}} UTC",
+      "inMinutes": "{{minutes}} 分钟后",
+      "inHours": "{{hours}} 小时 {{minutes}} 分钟后",
+      "offTrack": "距地面轨迹 {{km}} 公里",
+      "swathEdge": "位于幅宽边缘",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "类型",
+        "operator": "运营方",
+        "over": "下方",
+        "ocean": "海洋",
+        "altBand": "高度范围",
+        "inclination": "倾角",
+        "velocity": "速度",
+        "types": {
+          "sar": "SAR 成像",
+          "optical": "光学成像",
+          "military": "军用",
+          "sigint": "SIGINT",
+          "signals": "信号情报"
+        }
+      },
+      "tooOld_other": "轨道根数已有 {{count}} 天，过旧，无法计算过境。",
+      "count_other": "{{family}} 覆盖范围内有 {{count}} 个地点",
+      "passes_other": "{{count}} 次过境"
+    },
     "sheet": {
       "heading": "影像证据",
       "window": "过去 {{days}} 天，未来 {{hours}} 小时",
@@ -5390,6 +5460,38 @@
     },
     "target": {
       "acquired": "拍摄 {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "卫星影像",
+      "loading": "正在检查卫星档案库…",
+      "latest": "最新影像",
+      "nextPass": "下次过境",
+      "noImage": "未找到近期影像",
+      "noPass": "72 小时内无过境",
+      "openEvidence": "打开证据",
+      "imageAlt": "来自 {{source}} 的卫星视图",
+      "unavailable": "卫星影像加载失败。",
+      "fire": {
+        "title": "卫星火灾检测",
+        "detected": "探测时间",
+        "satellite": "卫星",
+        "confidence": "置信度",
+        "confidenceHigh": "高",
+        "confidenceNominal": "中等",
+        "confidenceLow": "低",
+        "power": "火灾功率",
+        "powerValue": "{{value}} MW",
+        "region": "地区",
+        "source": "数据源",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "每日合成图",
+        "mosaicLoading": "正在检查 NASA GIBS…",
+        "mosaicCaption": "{{date}} 当天 {{source}} 过境数据的合成图；火灾可能被云或烟雾遮挡。",
+        "mosaicNone": "NASA GIBS 没有 {{date}} 的 {{source}} 合成图。",
+        "mosaicNoLayer": "此卫星没有可用的每日合成图。",
+        "mosaicUnavailable": "每日合成图加载失败。",
+        "mosaicAlt": "NASA GIBS {{source}} {{date}} 每日合成图"
+      }
     }
   },
   "settings": {

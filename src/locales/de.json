@@ -1319,7 +1319,12 @@
       "printPdf": "Drucken / PDF",
       "exportData": "Daten exportieren",
       "moreActions": "Weitere Aktionen",
-      "shareLink": "Link teilen"
+      "shareLink": "Link teilen",
+      "sources": {
+        "summary": "Quellen und Zeitfenster · {{count}} Gruppen",
+        "note": "Die Zeitfenster der Quellen unterscheiden sich; dies ist keine 24-Stunden-Summe.",
+        "footer": "Kein Eingangswert für CII/CRI."
+      }
     },
     "relatedAssets": {
       "pipeline": "Pipeline",
@@ -3186,6 +3191,34 @@
         "change365": "In 12 Monaten",
         "measured": "Gemessen",
         "sparkline": "Wasserstand über 36 Monate"
+      },
+      "nextPass": {
+        "label": "Nächster ICESat-2-Überflug",
+        "loading": "Wird geladen…",
+        "at": "{{date}} (vorhergesagt aus Bahndaten vom {{epoch}}; Wolken können das Lidar blockieren)",
+        "none": "Keine Messung in diesem Zeitraum (bis {{date}}); Bahndaten vom {{epoch}}",
+        "unavailable": "Bahndaten nicht verfügbar"
+      },
+      "siteContext": {
+        "label": "Strategischer Stausee an diesem Ort"
+      },
+      "energyContext": {
+        "heading": "Strategische Stauseen",
+        "hydro": "Wasserkraft {{share}} % der Primärenergie"
+      },
+      "countryEvidence": {
+        "heading": "Wasserstände",
+        "empty": "Kein strategischer Stausee in diesem Land liegt beim letzten Überflug außerhalb seiner saisonalen Basislinie.",
+        "measured": "Gemessen am {{date}}"
+      },
+      "card": {
+        "measured": "Gemessen {{date}} · {{age}}",
+        "noCrossing": "keiner in diesem Zeitraum (bis {{date}})",
+        "crossing": "Vorhergesagter ICESat-2-Überflug",
+        "summary": "{{beyond}} von {{total}} Stauseen außerhalb der saisonalen Basis",
+        "latestPass": "letzter ICESat-2-Überflug {{date}}",
+        "sparkline": "Pegel über 36 Monate, saisonale Basis als gestrichelte Linie",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC). Lidar-Wasserspiegel aus datierten Überflügen, keine Live-Werte oder Speichervolumen."
       }
     },
     "gridDisruptionClock": {
@@ -3274,7 +3307,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED (verifiziert)",
       "gdelt": "GDELT",
       "records": "Einträge",
       "mediaSignal": "Unbestätigter Medienhinweis",
@@ -5303,6 +5335,47 @@
       "densityTip_one": "{{count}} Überflug ab {{start}} · {{names}}",
       "densityTip_other": "{{count}} Überflüge ab {{start}} · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "Überwachte Orte · nächste {{hours}} h",
+      "projecting": "Überflüge werden berechnet…",
+      "notLoaded": "Klicken Sie erneut auf den Satelliten; seine Bahndaten sind nicht geladen.",
+      "failed": "Klicken Sie erneut auf den Satelliten, um es erneut zu versuchen; die Berechnung ist fehlgeschlagen.",
+      "viewFailed": "Klicken Sie erneut auf den Satelliten, um es erneut zu versuchen; die Ortsliste konnte nicht geladen werden.",
+      "unavailable": "Klicken Sie erneut auf den Satelliten, um es erneut zu versuchen; die Überfluggeometrie hat diese Bahndaten abgelehnt.",
+      "signals": "Signalaufklärungssatellit. Kein Bildsensor, daher wird keine Bodenabdeckung modelliert.",
+      "noProfile": "Kein Sensorprofil für diesen Satelliten, daher wird seine Bodenabdeckung nicht modelliert.",
+      "geostationary": "Geostationär: steht fest über einem Längengrad, daher gibt es keine Überflüge aufzulisten.",
+      "badElements": "Bahndaten sind nicht lesbar.",
+      "none": "Kein überwachter Ort innerhalb des Footprints in den nächsten {{hours}} h.",
+      "utc": "{{time}} UTC",
+      "inMinutes": "in {{minutes}} Min",
+      "inHours": "in {{hours}} h {{minutes}} Min",
+      "offTrack": "{{km}} km neben der Bodenspur",
+      "swathEdge": "am Rand des Aufnahmestreifens",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "Typ",
+        "operator": "Betreiber",
+        "over": "Über",
+        "ocean": "Ozean",
+        "altBand": "Höhenband",
+        "inclination": "Inklination",
+        "velocity": "Geschwindigkeit",
+        "types": {
+          "sar": "SAR-Bildgebung",
+          "optical": "Optische Bildgebung",
+          "military": "Militärisch",
+          "sigint": "SIGINT",
+          "signals": "Signalaufklärung"
+        }
+      },
+      "tooOld_one": "Bahndaten sind {{count}} Tag alt, zu alt für die Überflugberechnung.",
+      "tooOld_other": "Bahndaten sind {{count}} Tage alt, zu alt für die Überflugberechnung.",
+      "count_one": "{{count}} Ort innerhalb des {{family}}-Footprints",
+      "count_other": "{{count}} Orte innerhalb des {{family}}-Footprints",
+      "passes_one": "{{count}} Überflug",
+      "passes_other": "{{count}} Überflüge"
+    },
     "sheet": {
       "heading": "Bildbelege",
       "window": "Letzte {{days}} Tage, nächste {{hours}} h",
@@ -5423,6 +5496,38 @@
     },
     "target": {
       "acquired": "ERFASST {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "Satellitenbilder",
+      "loading": "Satellitenarchive werden geprüft…",
+      "latest": "Neueste Aufnahme",
+      "nextPass": "Nächster Überflug",
+      "noImage": "Keine aktuelle Aufnahme gefunden",
+      "noPass": "Kein Überflug in den nächsten 72 Stunden",
+      "openEvidence": "Belege öffnen",
+      "imageAlt": "Satellitenansicht von {{source}}",
+      "unavailable": "Satellitenbilder konnten nicht geladen werden.",
+      "fire": {
+        "title": "Satellitenerkennung von Bränden",
+        "detected": "Erkannt",
+        "satellite": "Satellit",
+        "confidence": "Zuverlässigkeit",
+        "confidenceHigh": "Hoch",
+        "confidenceNominal": "Mittel",
+        "confidenceLow": "Niedrig",
+        "power": "Brandleistung",
+        "powerValue": "{{value}} MW",
+        "region": "Region",
+        "source": "Quelle",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "Tägliches Mosaik",
+        "mosaicLoading": "NASA GIBS wird überprüft…",
+        "mosaicCaption": "Zusammengesetztes Bild der {{source}}-Überflüge des Tages ({{date}}); das Feuer kann durch Wolken oder Rauch verdeckt sein.",
+        "mosaicNone": "NASA GIBS hat kein {{source}}-Mosaik für {{date}}.",
+        "mosaicNoLayer": "Für diesen Satelliten ist kein tägliches Mosaik verfügbar.",
+        "mosaicUnavailable": "Das tägliche Mosaik konnte nicht geladen werden.",
+        "mosaicAlt": "Tägliches NASA-GIBS-Mosaik ({{source}}) für {{date}}"
+      }
     }
   },
   "settings": {

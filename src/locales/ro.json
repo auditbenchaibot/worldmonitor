@@ -1215,7 +1215,12 @@
       "shareLink": "Distribuie linkul",
       "shareStory": "Distribuie povestea",
       "printPdf": "Imprimare / PDF",
-      "exportData": "Exportați datele"
+      "exportData": "Exportați datele",
+      "sources": {
+        "summary": "Surse și ferestre · {{count}} grupuri",
+        "note": "Ferestrele surselor diferă; nu este un total pe 24 de ore.",
+        "footer": "Nu este o intrare pentru CII/CRI."
+      }
     },
     "relatedAssets": {
       "pipeline": "Conducta",
@@ -3207,6 +3212,34 @@
         "change365": "În 12 luni",
         "measured": "Măsurat",
         "sparkline": "Nivelul apei în 36 de luni"
+      },
+      "nextPass": {
+        "label": "Următoarea trecere ICESat-2",
+        "loading": "Se încarcă…",
+        "at": "{{date}} (estimat din datele orbitale din {{epoch}}; norii pot bloca lidarul)",
+        "none": "Nicio măsurătoare în această perioadă (până la {{date}}); date orbitale din {{epoch}}",
+        "unavailable": "Datele orbitale nu sunt disponibile"
+      },
+      "siteContext": {
+        "label": "Lac de acumulare strategic în acest loc"
+      },
+      "energyContext": {
+        "heading": "Lacuri de acumulare strategice",
+        "hydro": "Hidroenergie {{share}}% din energia primară"
+      },
+      "countryEvidence": {
+        "heading": "Niveluri ale apei",
+        "empty": "Niciun lac de acumulare strategic din această țară nu este în afara bazei sale sezoniere la ultima trecere.",
+        "measured": "Măsurat la {{date}}"
+      },
+      "card": {
+        "measured": "Măsurat {{date}} · {{age}}",
+        "noCrossing": "niciuna în această fereastră (până la {{date}})",
+        "crossing": "Trecere ICESat-2 prognozată",
+        "summary": "{{beyond}} din {{total}} lacuri în afara bazei sezoniere",
+        "latestPass": "ultima trecere ICESat-2 {{date}}",
+        "sparkline": "Nivel pe 36 de luni, cu baza sezonieră punctată",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC). Niveluri lidar ale suprafeței apei din treceri datate, nu citiri live sau volume stocate."
       }
     },
     "gridDisruptionClock": {
@@ -3296,7 +3329,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED (verificat)",
       "gdelt": "GDELT",
       "records": "înregistrări",
       "mediaSignal": "Semnal media neverificat",
@@ -5332,6 +5364,50 @@
       "densityTip_few": "{{count}} treceri din {{start}} · {{names}}",
       "densityTip_other": "{{count}} de treceri din {{start}} · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "Locații monitorizate · următoarele {{hours}} h",
+      "projecting": "Se calculează trecerile…",
+      "notLoaded": "Faceți clic pe satelit din nou; elementele orbitale nu au fost încărcate.",
+      "failed": "Faceți clic pe satelit din nou pentru a reîncerca; calculul trecerilor a eșuat.",
+      "viewFailed": "Faceți clic pe satelit din nou pentru a reîncerca; lista de locații nu a fost încărcată.",
+      "unavailable": "Faceți clic pe satelit din nou pentru a reîncerca; geometria trecerilor a respins aceste elemente orbitale.",
+      "signals": "Satelit de informații din semnale. Fără senzor de imagine, deci acoperirea la sol nu este modelată.",
+      "noProfile": "Nu există profil de senzor pentru acest satelit, deci acoperirea sa la sol nu este modelată.",
+      "geostationary": "Geostaționar: fix deasupra unei longitudini, deci nu există treceri de afișat.",
+      "badElements": "Elementele orbitale sunt ilizibile.",
+      "none": "Nicio locație monitorizată nu intră în amprenta sa în următoarele {{hours}} h.",
+      "utc": "{{time}} UTC",
+      "inMinutes": "în {{minutes}} min",
+      "inHours": "în {{hours}} h {{minutes}} min",
+      "offTrack": "la {{km}} km de urma la sol",
+      "swathEdge": "la marginea benzii",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "Tip",
+        "operator": "Operator",
+        "over": "Deasupra",
+        "ocean": "Ocean",
+        "altBand": "Bandă de altitudine",
+        "inclination": "Incl.",
+        "velocity": "Viteză",
+        "types": {
+          "sar": "Imagistică SAR",
+          "optical": "Imagistică optică",
+          "military": "Militar",
+          "sigint": "SIGINT",
+          "signals": "Informații din semnale"
+        }
+      },
+      "tooOld_one": "Elementele orbitale au {{count}} zi, prea vechi pentru a calcula trecerile.",
+      "tooOld_few": "Elementele orbitale au {{count}} zile, prea vechi pentru a calcula trecerile.",
+      "tooOld_other": "Elementele orbitale au {{count}} de zile, prea vechi pentru a calcula trecerile.",
+      "count_one": "{{count}} locație în amprenta {{family}}",
+      "count_few": "{{count}} locații în amprenta {{family}}",
+      "count_other": "{{count}} de locații în amprenta {{family}}",
+      "passes_one": "{{count}} trecere",
+      "passes_few": "{{count}} treceri",
+      "passes_other": "{{count}} de treceri"
+    },
     "sheet": {
       "heading": "Dovezi din imagini satelitare",
       "window": "Ultimele {{days}} zile, următoarele {{hours}} h",
@@ -5456,6 +5532,38 @@
     },
     "target": {
       "acquired": "CAPTAT {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "Imagini din satelit",
+      "loading": "Se verifică arhivele satelitare…",
+      "latest": "Cea mai recentă imagine",
+      "nextPass": "Următoarea trecere",
+      "noImage": "Nu s-a găsit nicio imagine recentă",
+      "noPass": "Nicio trecere în următoarele 72 de ore",
+      "openEvidence": "Deschide dovezile",
+      "imageAlt": "Vedere din satelit de la {{source}}",
+      "unavailable": "Imaginile din satelit nu s-au încărcat.",
+      "fire": {
+        "title": "Detecție incendii prin satelit",
+        "detected": "Detectat",
+        "satellite": "Satelit",
+        "confidence": "Încredere",
+        "confidenceHigh": "Ridicată",
+        "confidenceNominal": "Nominală",
+        "confidenceLow": "Scăzută",
+        "power": "Puterea incendiului",
+        "powerValue": "{{value}} MW",
+        "region": "Regiune",
+        "source": "Sursă",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "Mozaic zilei",
+        "mosaicLoading": "Se verifică NASA GIBS…",
+        "mosaicCaption": "Compozit al trecerilor {{source}} din ziua {{date}}; incendiul poate fi ascuns de nori sau fum.",
+        "mosaicNone": "NASA GIBS nu are mozaic {{source}} pentru {{date}}.",
+        "mosaicNoLayer": "Niciun mozaic zilei nu este disponibil pentru acest satelit.",
+        "mosaicUnavailable": "Mozaicul zilei nu s-a încărcat.",
+        "mosaicAlt": "Mozaic zilei NASA GIBS {{source}} pentru {{date}}"
+      }
     }
   },
   "settings": {

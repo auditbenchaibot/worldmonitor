@@ -1362,7 +1362,12 @@
       "shareLink": "Hivatkozás megosztása",
       "shareStory": "Történet megosztása",
       "printPdf": "Nyomtatás / PDF",
-      "exportData": "Adatok exportálása"
+      "exportData": "Adatok exportálása",
+      "sources": {
+        "summary": "Források és ablakok · {{count}} csoport",
+        "note": "A források ablakai eltérnek; ez nem 24 órás összeg.",
+        "footer": "Nem bemenete a CII/CRI-nek."
+      }
     },
     "relatedAssets": {
       "pipeline": "Vezeték",
@@ -3255,6 +3260,34 @@
         "change365": "12 hónap alatt",
         "measured": "Mérés ideje",
         "sparkline": "Vízszint 36 hónap alatt"
+      },
+      "nextPass": {
+        "label": "Következő ICESat-2 áthaladás",
+        "loading": "Betöltés…",
+        "at": "{{date}} (előrejelzés a(z) {{epoch}} pályaadatai alapján; a felhőzet blokkolhatja a lidart)",
+        "none": "Nincs mérés ebben az időszakban ({{date}}-ig); pályaadatok: {{epoch}}",
+        "unavailable": "Pályaadatok nem érhetők el"
+      },
+      "siteContext": {
+        "label": "Stratégiai víztározó ezen a helyen"
+      },
+      "energyContext": {
+        "heading": "Stratégiai víztározók",
+        "hydro": "Vízenergia: a primer energia {{share}}%-a"
+      },
+      "countryEvidence": {
+        "heading": "Vízszintek",
+        "empty": "Az ország egyetlen stratégiai tározója sincs az utolsó áthaladáskor a szezonális alapvonalán kívül.",
+        "measured": "Mérve: {{date}}"
+      },
+      "card": {
+        "measured": "Mérve: {{date}} · {{age}}",
+        "noCrossing": "ebben az ablakban nincs ({{date}}-ig)",
+        "crossing": "Várható ICESat-2 átvonulás",
+        "summary": "{{total}} tározóból {{beyond}} a szezonális alapvonalon kívül",
+        "latestPass": "utolsó ICESat-2 áthaladás: {{date}}",
+        "sparkline": "36 havi szint, a szezonális alapvonal szaggatott vonallal",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC). Lidaros vízfelszín-szintek dátumozott áthaladásokból, nem élő értékek vagy tárolt térfogatok."
       }
     },
     "gridDisruptionClock": {
@@ -3344,7 +3377,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED (ellenőrzött)",
       "gdelt": "GDELT",
       "records": "rekord",
       "mediaSignal": "Nem ellenőrzött médiajelzés",
@@ -5303,6 +5335,47 @@
       "densityTip_one": "{{count}} áthaladás {{start}} óta · {{names}}",
       "densityTip_other": "{{count}} áthaladás {{start}} óta · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "Megfigyelt helyek · következő {{hours}} h",
+      "projecting": "Áthaladások kiszámítása…",
+      "notLoaded": "Kattintson ismét a műholdra; a pályaelemei nincsenek betöltve.",
+      "failed": "Kattintson ismét a műholdra az újrapróbálkozáshoz; az áthaladások kiszámítása sikertelen.",
+      "viewFailed": "Kattintson ismét a műholdra az újrapróbálkozáshoz; a helylista nem töltődött be.",
+      "unavailable": "Kattintson ismét a műholdra az újrapróbálkozáshoz; az áthaladási geometria elutasította ezeket a pályaelemeket.",
+      "signals": "Jelfelderítő műhold. Nincs képalkotó érzékelője, így a földi lefedettsége nincs modellezve.",
+      "noProfile": "Ehhez a műholdhoz nincs érzékelőprofil, így a földi lefedettsége nincs modellezve.",
+      "geostationary": "Geostacionárius: egyetlen földrajzi hosszúság felett áll, így nincsenek listázható áthaladások.",
+      "badElements": "A pályaelemek nem olvashatók.",
+      "none": "{{hours}} órán belül egyetlen megfigyelt hely sem esik a lábnyomába.",
+      "utc": "{{time}} UTC",
+      "inMinutes": "{{minutes}} perc múlva",
+      "inHours": "{{hours}} óra {{minutes}} perc múlva",
+      "offTrack": "{{km}} km-re a talajnyomtól",
+      "swathEdge": "a sáv szélén",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "Típus",
+        "operator": "Üzemeltető",
+        "over": "Felett",
+        "ocean": "Óceán",
+        "altBand": "Magassági sáv",
+        "inclination": "Hajl.",
+        "velocity": "Sebesség",
+        "types": {
+          "sar": "SAR képalkotás",
+          "optical": "Optikai képalkotás",
+          "military": "Katonai",
+          "sigint": "SIGINT",
+          "signals": "Jelfelderítés"
+        }
+      },
+      "tooOld_one": "A pályaelemek {{count}} naposak, túl régiek az áthaladások kiszámításához.",
+      "tooOld_other": "A pályaelemek {{count}} naposak, túl régiek az áthaladások kiszámításához.",
+      "count_one": "{{family}}: {{count}} megfigyelt hely a lábnyomon belül",
+      "count_other": "{{family}}: {{count}} megfigyelt hely a lábnyomon belül",
+      "passes_one": "{{count}} áthaladás",
+      "passes_other": "{{count}} áthaladás"
+    },
     "sheet": {
       "heading": "Képi bizonyíték",
       "window": "Utolsó {{days}} nap, következő {{hours}} ó",
@@ -5423,6 +5496,38 @@
     },
     "target": {
       "acquired": "RÖGZÍTVE {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "Műholdképek",
+      "loading": "Műholdas archívumok ellenőrzése…",
+      "latest": "Legutóbbi felvétel",
+      "nextPass": "Következő áthaladás",
+      "noImage": "Nincs friss felvétel",
+      "noPass": "72 órán belül nincs áthaladás",
+      "openEvidence": "Bizonyítékok megnyitása",
+      "imageAlt": "Műholdas nézet innen: {{source}}",
+      "unavailable": "A műholdképek nem töltődtek be.",
+      "fire": {
+        "title": "Műhold tűzdetektálás",
+        "detected": "Észlelve",
+        "satellite": "Műhold",
+        "confidence": "Megbízhatóság",
+        "confidenceHigh": "Magas",
+        "confidenceNominal": "Normális",
+        "confidenceLow": "Alacsony",
+        "power": "Tűz teljesítménye",
+        "powerValue": "{{value}} MW",
+        "region": "Régió",
+        "source": "Forrás",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "Napi mozaik",
+        "mosaicLoading": "NASA GIBS ellenőrzése…",
+        "mosaicCaption": "A nap {{source}} áthaladásainak összeállítása {{date}} napra; a tűz felhő vagy füst alatt rejtve lehet.",
+        "mosaicNone": "A NASA GIBS nem rendelkezik {{source}} mozaikkal {{date}} napra.",
+        "mosaicNoLayer": "Ehhez a műholdhoz nincs elérhető napi mozaik.",
+        "mosaicUnavailable": "A napi mozaik nem töltődött be.",
+        "mosaicAlt": "NASA GIBS {{source}} napi mozaik {{date}} napra"
+      }
     }
   },
   "settings": {

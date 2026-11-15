@@ -1459,7 +1459,12 @@
       "moreActions": "More actions",
       "shareStory": "Share story",
       "printPdf": "Print / PDF",
-      "exportData": "Export data"
+      "exportData": "Export data",
+      "sources": {
+        "summary": "Sources and windows · {{count}} families",
+        "note": "Source windows vary; not a 24-hour total.",
+        "footer": "Not an input to CII/CRI."
+      }
     },
     "relatedAssets": {
       "pipeline": "Pipeline",
@@ -3352,6 +3357,34 @@
         "change365": "Over 12 months",
         "measured": "Measured",
         "sparkline": "Water level over 36 months"
+      },
+      "nextPass": {
+        "label": "Next ICESat-2 crossing",
+        "loading": "Loading…",
+        "at": "{{date}} (predicted from orbit data of {{epoch}}; cloud can block the lidar)",
+        "none": "No measurement in this window (to {{date}}); orbit data of {{epoch}}",
+        "unavailable": "Orbit data unavailable"
+      },
+      "siteContext": {
+        "label": "Strategic reservoir at this site"
+      },
+      "energyContext": {
+        "heading": "Strategic reservoirs",
+        "hydro": "Hydro {{share}}% of primary energy"
+      },
+      "countryEvidence": {
+        "heading": "Water levels",
+        "empty": "No strategic reservoir in this country is beyond its seasonal baseline at its latest pass.",
+        "measured": "Measured {{date}}"
+      },
+      "card": {
+        "measured": "Measured {{date}} · {{age}}",
+        "noCrossing": "none in this window (to {{date}})",
+        "crossing": "Predicted ICESat-2 crossing",
+        "summary": "{{beyond}} of {{total}} reservoirs beyond seasonal baseline",
+        "latestPass": "latest ICESat-2 pass {{date}}",
+        "sparkline": "36-month water level; dashed line marks the seasonal baseline",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC). Lidar water-surface levels from dated passes, not live readings or storage volumes."
       }
     }
   },
@@ -3390,7 +3423,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED (verified)",
       "gdelt": "GDELT",
       "records": "records",
       "mediaSignal": "Unverified media signal",
@@ -4770,6 +4802,47 @@
       "noPreview": "No preview published for this scene yet",
       "radar": "radar"
     },
+    "satelliteSites": {
+      "heading": "Monitored sites · next {{hours}} h",
+      "projecting": "Projecting passes…",
+      "notLoaded": "Click the satellite again; its orbit elements are not loaded.",
+      "failed": "Click the satellite again to retry; the projection failed.",
+      "viewFailed": "Click the satellite again to retry; the site list did not load.",
+      "unavailable": "Click the satellite again to retry; the pass geometry rejected these orbit elements.",
+      "signals": "Signals-intelligence satellite. No imager, so no ground coverage is modelled.",
+      "noProfile": "No sensor profile for this satellite, so its ground coverage is not modelled.",
+      "geostationary": "Geostationary: fixed above one longitude, so no passes to list.",
+      "badElements": "Orbit elements are unreadable.",
+      "tooOld_one": "Orbit elements are {{count}} day old, too old to project passes.",
+      "tooOld_other": "Orbit elements are {{count}} days old, too old to project passes.",
+      "none": "No monitored site inside its footprint within {{hours}} h.",
+      "count_one": "{{count}} site inside the {{family}} footprint",
+      "count_other": "{{count}} sites inside the {{family}} footprint",
+      "utc": "{{time}} UTC",
+      "inMinutes": "in {{minutes}} min",
+      "inHours": "in {{hours}} h {{minutes}} min",
+      "offTrack": "{{km}} km off track",
+      "swathEdge": "at swath edge",
+      "passes_one": "{{count}} pass",
+      "passes_other": "{{count}} passes",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "Type",
+        "operator": "Operator",
+        "over": "Over",
+        "ocean": "Ocean",
+        "altBand": "Alt. band",
+        "inclination": "Incl.",
+        "velocity": "Velocity",
+        "types": {
+          "sar": "SAR Imaging",
+          "optical": "Optical Imaging",
+          "military": "Military",
+          "sigint": "SIGINT",
+          "signals": "Signals"
+        }
+      }
+    },
     "viewer": {
       "open": "Open scene: {{image}}",
       "imageAlt": "{{name}} scene, {{time}}",
@@ -4861,6 +4934,38 @@
     },
     "target": {
       "acquired": "ACQUIRED {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "Satellite imagery",
+      "loading": "Checking satellite archives…",
+      "latest": "Latest image",
+      "nextPass": "Next pass",
+      "noImage": "No recent image found",
+      "noPass": "No pass due within 72 hours",
+      "openEvidence": "Open evidence",
+      "imageAlt": "Satellite view from {{source}}",
+      "unavailable": "Satellite imagery did not load.",
+      "fire": {
+        "title": "Satellite fire detection",
+        "detected": "Detected",
+        "satellite": "Satellite",
+        "confidence": "Confidence",
+        "confidenceHigh": "High",
+        "confidenceNominal": "Nominal",
+        "confidenceLow": "Low",
+        "power": "Fire power",
+        "powerValue": "{{value}} MW",
+        "region": "Region",
+        "source": "Source",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "Daily mosaic",
+        "mosaicLoading": "Checking NASA GIBS…",
+        "mosaicCaption": "A composite of the day's {{source}} passes for {{date}}; the fire may be hidden by cloud or smoke.",
+        "mosaicNone": "NASA GIBS has no {{source}} mosaic for {{date}}.",
+        "mosaicNoLayer": "No daily mosaic is available for this satellite.",
+        "mosaicUnavailable": "The daily mosaic did not load.",
+        "mosaicAlt": "NASA GIBS {{source}} daily mosaic for {{date}}"
+      }
     }
   },
   "contextMenu": {

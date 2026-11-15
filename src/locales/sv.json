@@ -772,7 +772,12 @@
       "printPdf": "Skriv ut / PDF",
       "exportData": "Exportera data",
       "moreActions": "Fler åtgärder",
-      "shareLink": "Dela länk"
+      "shareLink": "Dela länk",
+      "sources": {
+        "summary": "Källor och fönster · {{count}} grupper",
+        "note": "Källornas fönster varierar; detta är ingen 24-timmarssumma.",
+        "footer": "Ingen indata till CII/CRI."
+      }
     },
     "relatedAssets": {
       "pipeline": "Rörledning",
@@ -2802,6 +2807,34 @@
         "change365": "På 12 månader",
         "measured": "Mätt",
         "sparkline": "Vattennivå över 36 månader"
+      },
+      "nextPass": {
+        "label": "Nästa ICESat-2-passage",
+        "loading": "Laddar…",
+        "at": "{{date}} (förutsagt från banddata från {{epoch}}; moln kan blockera lidarn)",
+        "none": "Ingen mätning i detta fönster (till {{date}}); banddata från {{epoch}}",
+        "unavailable": "Banddata är inte tillgängliga"
+      },
+      "siteContext": {
+        "label": "Strategisk reservoar på denna plats"
+      },
+      "energyContext": {
+        "heading": "Strategiska reservoarer",
+        "hydro": "Vattenkraft {{share}} % av primärenergin"
+      },
+      "countryEvidence": {
+        "heading": "Vattennivåer",
+        "empty": "Ingen strategisk reservoar i det här landet ligger utanför sin säsongsbaslinje vid den senaste överflygningen.",
+        "measured": "Uppmätt {{date}}"
+      },
+      "card": {
+        "measured": "Uppmätt {{date}} · {{age}}",
+        "noCrossing": "ingen i detta fönster (till {{date}})",
+        "crossing": "Förutsagd ICESat-2-passage",
+        "summary": "{{beyond}} av {{total}} magasin utanför säsongsbasen",
+        "latestPass": "senaste ICESat-2-passage {{date}}",
+        "sparkline": "Nivå över 36 månader med säsongsbasen streckad",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC). Lidarnivåer för vattenytan från daterade passager, inte liveavläsningar eller volymer."
       }
     },
     "gridDisruptionClock": {
@@ -2890,7 +2923,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED (verifierad)",
       "gdelt": "GDELT",
       "records": "poster",
       "mediaSignal": "Obekräftad mediesignal",
@@ -5303,6 +5335,47 @@
       "densityTip_one": "{{count}} passage från {{start}} · {{names}}",
       "densityTip_other": "{{count}} passager från {{start}} · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "Övervakade platser · kommande {{hours}} h",
+      "projecting": "Beräknar passager…",
+      "notLoaded": "Klicka på satelliten igen; dess banelement har inte laddats.",
+      "failed": "Klicka på satelliten igen för att försöka på nytt; beräkningen misslyckades.",
+      "viewFailed": "Klicka på satelliten igen för att försöka på nytt; platslistan kunde inte laddas.",
+      "unavailable": "Klicka på satelliten igen för att försöka på nytt; passagegeometrin avvisade dessa banelement.",
+      "signals": "Signalspaningssatellit. Ingen bildsensor, så ingen marktäckning modelleras.",
+      "noProfile": "Ingen sensorprofil för denna satellit, så dess marktäckning modelleras inte.",
+      "geostationary": "Geostationär: fast över en longitud, så det finns inga passager att lista.",
+      "badElements": "Banelementen är oläsbara.",
+      "none": "Ingen övervakad plats inom täckningsområdet under de kommande {{hours}} h.",
+      "utc": "{{time}} UTC",
+      "inMinutes": "om {{minutes}} min",
+      "inHours": "om {{hours}} h {{minutes}} min",
+      "offTrack": "{{km}} km från markspåret",
+      "swathEdge": "vid kanten av svepet",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "Typ",
+        "operator": "Operatör",
+        "over": "Över",
+        "ocean": "Hav",
+        "altBand": "Höjdband",
+        "inclination": "Inkl.",
+        "velocity": "Hastighet",
+        "types": {
+          "sar": "SAR-avbildning",
+          "optical": "Optisk avbildning",
+          "military": "Militär",
+          "sigint": "SIGINT",
+          "signals": "Signalspaning"
+        }
+      },
+      "tooOld_one": "Banelementen är {{count}} dag gamla, för gamla för att beräkna passager.",
+      "tooOld_other": "Banelementen är {{count}} dagar gamla, för gamla för att beräkna passager.",
+      "count_one": "{{count}} plats inom täckningsområdet för {{family}}",
+      "count_other": "{{count}} platser inom täckningsområdet för {{family}}",
+      "passes_one": "{{count}} passage",
+      "passes_other": "{{count}} passager"
+    },
     "sheet": {
       "heading": "Bildbevis",
       "window": "Senaste {{days}} dagar, nästa {{hours}} h",
@@ -5423,6 +5496,38 @@
     },
     "target": {
       "acquired": "INHÄMTAD {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "Satellitbilder",
+      "loading": "Kontrollerar satellitarkiv…",
+      "latest": "Senaste bild",
+      "nextPass": "Nästa överflygning",
+      "noImage": "Ingen ny bild hittades",
+      "noPass": "Ingen överflygning inom 72 timmar",
+      "openEvidence": "Öppna bevis",
+      "imageAlt": "Satellitvy från {{source}}",
+      "unavailable": "Satellitbilderna kunde inte läsas in.",
+      "fire": {
+        "title": "Upptäckning av satellielbränder",
+        "detected": "Upptäckt",
+        "satellite": "Satellit",
+        "confidence": "Säkerhet",
+        "confidenceHigh": "Hög",
+        "confidenceNominal": "Normal",
+        "confidenceLow": "Låg",
+        "power": "Eldstyrka",
+        "powerValue": "{{value}} MW",
+        "region": "Region",
+        "source": "Källa",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "Daglig mosaik",
+        "mosaicLoading": "Kontrollerar NASA GIBS…",
+        "mosaicCaption": "En sammanställning av dagens {{source}}-passager för {{date}}; branden kan vara dold av moln eller rök.",
+        "mosaicNone": "NASA GIBS har ingen {{source}}-mosaik för {{date}}.",
+        "mosaicNoLayer": "Ingen daglig mosaik är tillgänglig för denna satellit.",
+        "mosaicUnavailable": "Den dagliga mosaiken laddades inte.",
+        "mosaicAlt": "NASA GIBS {{source}} daglig mosaik för {{date}}"
+      }
     }
   },
   "settings": {

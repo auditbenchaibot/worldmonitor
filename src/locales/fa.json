@@ -1362,7 +1362,12 @@
       "shareLink": "اشتراک‌گذاری پیوند",
       "shareStory": "اشتراک‌گذاری خبر",
       "printPdf": "چاپ / PDF",
-      "exportData": "خروجی داده‌ها"
+      "exportData": "خروجی داده‌ها",
+      "sources": {
+        "summary": "منابع و بازه‌ها · {{count}} گروه",
+        "note": "بازه‌های منابع متفاوت است؛ این جمع ۲۴ ساعته نیست.",
+        "footer": "ورودی CII/CRI نیست."
+      }
     },
     "relatedAssets": {
       "pipeline": "خط لوله",
@@ -3255,6 +3260,34 @@
         "change365": "در 12 ماه",
         "measured": "زمان اندازه‌گیری",
         "sparkline": "سطح آب در 36 ماه"
+      },
+      "nextPass": {
+        "label": "عبور بعدی ICESat-2",
+        "loading": "در حال بارگذاری…",
+        "at": "{{date}} (پیش‌بینی‌شده از داده‌های مداری {{epoch}}؛ ابر می‌تواند جلوی لیدار را بگیرد)",
+        "none": "در این بازه اندازه‌گیری‌ای نیست (تا {{date}})؛ داده‌های مداری {{epoch}}",
+        "unavailable": "داده‌های مداری در دسترس نیست"
+      },
+      "siteContext": {
+        "label": "مخزن راهبردی در این محل"
+      },
+      "energyContext": {
+        "heading": "مخازن راهبردی",
+        "hydro": "برق‌آبی {{share}}٪ از انرژی اولیه"
+      },
+      "countryEvidence": {
+        "heading": "سطح آب",
+        "empty": "هیچ مخزن راهبردی در این کشور در آخرین عبور خارج از خط پایه فصلی خود نیست.",
+        "measured": "اندازه‌گیری‌شده در {{date}}"
+      },
+      "card": {
+        "measured": "اندازه‌گیری {{date}} · {{age}}",
+        "noCrossing": "در این بازه هیچ (تا {{date}})",
+        "crossing": "عبور پیش‌بینی‌شده ICESat-2",
+        "summary": "{{beyond}} از {{total}} مخزن خارج از خط پایه فصلی",
+        "latestPass": "آخرین عبور ICESat-2 در {{date}}",
+        "sparkline": "تراز ۳۶ ماهه با خط پایه فصلی به‌صورت خط‌چین",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC). تراز سطح آب با لیدار از عبورهای تاریخ‌دار، نه خوانش زنده یا حجم ذخیره."
       }
     },
     "gridDisruptionClock": {
@@ -3344,7 +3377,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED (تأییدشده)",
       "gdelt": "GDELT",
       "records": "رکورد",
       "mediaSignal": "نشانه رسانه‌ای تأییدنشده",
@@ -5303,6 +5335,47 @@
       "densityTip_one": "{{count}} عبور از {{start}} · {{names}}",
       "densityTip_other": "{{count}} عبور از {{start}} · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "سایت‌های تحت نظارت · {{hours}} ساعت آینده",
+      "projecting": "محاسبه گذرها…",
+      "notLoaded": "دوباره روی ماهواره کلیک کنید؛ عناصر مداری آن بارگذاری نشده‌اند.",
+      "failed": "برای تلاش دوباره، روی ماهواره کلیک کنید؛ محاسبهٔ گذرها ناموفق بود.",
+      "viewFailed": "برای تلاش دوباره، روی ماهواره کلیک کنید؛ فهرست سایت‌ها بارگذاری نشد.",
+      "unavailable": "برای تلاش دوباره، روی ماهواره کلیک کنید؛ هندسهٔ گذر این عناصر مداری را رد کرد.",
+      "signals": "ماهوارهٔ اطلاعات سیگنالی. تصویرگر ندارد، بنابراین پوشش زمینی مدل‌سازی نمی‌شود.",
+      "noProfile": "برای این ماهواره نمایهٔ حسگر وجود ندارد، بنابراین پوشش زمینی آن مدل‌سازی نمی‌شود.",
+      "geostationary": "زمین‌ایستا: ثابت بر فراز یک طول جغرافیایی، بنابراین گذری برای نمایش وجود ندارد.",
+      "badElements": "عناصر مداری قابل خواندن نیستند.",
+      "none": "در {{hours}} ساعت آینده هیچ سایت تحت نظارتی درون محدودهٔ پوشش آن نیست.",
+      "utc": "{{time}} UTC",
+      "inMinutes": "{{minutes}} دقیقهٔ دیگر",
+      "inHours": "{{hours}} ساعت و {{minutes}} دقیقهٔ دیگر",
+      "offTrack": "{{km}} کیلومتر فاصله از ردّ زمینی",
+      "swathEdge": "در لبهٔ نوار تصویربرداری",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "نوع",
+        "operator": "اپراتور",
+        "over": "بر فراز",
+        "ocean": "اقیانوس",
+        "altBand": "باند ارتفاع",
+        "inclination": "شیب مداری",
+        "velocity": "سرعت",
+        "types": {
+          "sar": "تصویربرداری SAR",
+          "optical": "تصویربرداری نوری",
+          "military": "نظامی",
+          "sigint": "SIGINT",
+          "signals": "سیگنال‌ها"
+        }
+      },
+      "tooOld_one": "عناصر مداری {{count}} روز قدمت دارند و برای محاسبهٔ گذرها بیش از حد قدیمی‌اند.",
+      "tooOld_other": "عناصر مداری {{count}} روز قدمت دارند و برای محاسبهٔ گذرها بیش از حد قدیمی‌اند.",
+      "count_one": "{{count}} سایت درون محدودهٔ پوشش {{family}}",
+      "count_other": "{{count}} سایت درون محدودهٔ پوشش {{family}}",
+      "passes_one": "{{count}} گذر",
+      "passes_other": "{{count}} گذر"
+    },
     "sheet": {
       "heading": "شواهد تصویری",
       "window": "{{days}} روز گذشته، {{hours}} ساعت آینده",
@@ -5423,6 +5496,38 @@
     },
     "target": {
       "acquired": "ثبت‌شده {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "تصاویر ماهواره‌ای",
+      "loading": "در حال بررسی بایگانی‌های ماهواره‌ای…",
+      "latest": "جدیدترین تصویر",
+      "nextPass": "گذر بعدی",
+      "noImage": "تصویر اخیری یافت نشد",
+      "noPass": "هیچ گذری تا ۷۲ ساعت آینده نیست",
+      "openEvidence": "باز کردن شواهد",
+      "imageAlt": "نمای ماهواره‌ای از {{source}}",
+      "unavailable": "تصاویر ماهواره‌ای بارگیری نشد.",
+      "fire": {
+        "title": "تشخیص آتش‌سوزی ماهواره‌ای",
+        "detected": "تشخیص‌شده",
+        "satellite": "ماهواره",
+        "confidence": "اعتماد‌پذیری",
+        "confidenceHigh": "بالا",
+        "confidenceNominal": "متوسط",
+        "confidenceLow": "پایین",
+        "power": "توان آتش",
+        "powerValue": "{{value}} مگاوات",
+        "region": "منطقه",
+        "source": "منبع",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "موزاییک روزانه",
+        "mosaicLoading": "بررسی NASA GIBS…",
+        "mosaicCaption": "ترکیبی از گذرهای {{source}} در روز {{date}}؛ آتش‌سوزی ممکن است توسط ابر یا دود پنهان باشد.",
+        "mosaicNone": "NASA GIBS موزاییک {{source}} برای {{date}} ندارد.",
+        "mosaicNoLayer": "موزاییک روزانه برای این ماهواره دسترس‌پذیر نیست.",
+        "mosaicUnavailable": "موزاییک روزانه بارگذاری نشد.",
+        "mosaicAlt": "موزاییک روزانه NASA GIBS {{source}} برای {{date}}"
+      }
     }
   },
   "settings": {

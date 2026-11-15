@@ -1172,7 +1172,12 @@
       "printPdf": "طباعة / PDF",
       "exportData": "تصدير البيانات",
       "moreActions": "إجراءات إضافية",
-      "shareLink": "مشاركة الرابط"
+      "shareLink": "مشاركة الرابط",
+      "sources": {
+        "summary": "المصادر والفترات · {{count}} فئات",
+        "note": "تختلف فترات المصادر؛ هذا ليس مجموعًا لـ 24 ساعة.",
+        "footer": "ليس مدخلًا في CII/CRI."
+      }
     },
     "relatedAssets": {
       "pipeline": "خط أنابيب",
@@ -3270,6 +3275,34 @@
         "change365": "خلال 12 شهرًا",
         "measured": "تاريخ القياس",
         "sparkline": "منسوب المياه خلال 36 شهرًا"
+      },
+      "nextPass": {
+        "label": "عبور ICESat-2 التالي",
+        "loading": "جارٍ التحميل…",
+        "at": "{{date}} (متوقع من بيانات المدار بتاريخ {{epoch}}؛ قد تحجب الغيوم الليدار)",
+        "none": "لا قياس في هذه الفترة (حتى {{date}})؛ بيانات المدار بتاريخ {{epoch}}",
+        "unavailable": "بيانات المدار غير متاحة"
+      },
+      "siteContext": {
+        "label": "خزان استراتيجي في هذا الموقع"
+      },
+      "energyContext": {
+        "heading": "خزانات استراتيجية",
+        "hydro": "الطاقة الكهرومائية {{share}}% من الطاقة الأولية"
+      },
+      "countryEvidence": {
+        "heading": "مستويات المياه",
+        "empty": "لا يوجد خزان استراتيجي في هذا البلد خارج خط أساسه الموسمي في آخر مرور.",
+        "measured": "قيس في {{date}}"
+      },
+      "card": {
+        "measured": "قيس في {{date}} · {{age}}",
+        "noCrossing": "لا يوجد في هذه الفترة (حتى {{date}})",
+        "crossing": "عبور ICESat-2 المتوقع",
+        "summary": "{{beyond}} من {{total}} خزانات خارج خط الأساس الموسمي",
+        "latestPass": "آخر مرور لـ ICESat-2 في {{date}}",
+        "sparkline": "المنسوب خلال 36 شهرًا مع خط الأساس الموسمي كخط متقطع",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC). مناسيب سطح الماء بالليدار من مرورات مؤرخة، وليست قراءات حية أو أحجام تخزين."
       }
     },
     "gridDisruptionClock": {
@@ -3359,7 +3392,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED (موثّق)",
       "gdelt": "GDELT",
       "records": "سجلات",
       "mediaSignal": "إشارة إعلامية غير مؤكدة",
@@ -5419,6 +5451,59 @@
       "densityTip_many": "{{count}} مرورًا من {{start}} · {{names}}",
       "densityTip_other": "{{count}} مرور من {{start}} · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "المواقع المراقبة · الساعات الـ {{hours}} القادمة",
+      "projecting": "جارٍ حساب أوقات المرور…",
+      "notLoaded": "انقر على القمر الصناعي مجددًا؛ عناصر مداره لم تُحمّل.",
+      "failed": "انقر على القمر الصناعي مرة أخرى لإعادة المحاولة؛ فشل حساب المرور.",
+      "viewFailed": "انقر على القمر الصناعي مرة أخرى لإعادة المحاولة؛ لم تُحمَّل قائمة المواقع.",
+      "unavailable": "انقر على القمر الصناعي مرة أخرى لإعادة المحاولة؛ رفضت هندسة المرور عناصر المدار هذه.",
+      "signals": "قمر صناعي لاستخبارات الإشارات. لا يحمل جهاز تصوير، لذا لا تُنمذَج تغطيته الأرضية.",
+      "noProfile": "لا يوجد ملف تعريف للمستشعر لهذا القمر الصناعي، لذا لا تُنمذَج تغطيته الأرضية.",
+      "geostationary": "ثابت بالنسبة للأرض: يبقى فوق خط طول واحد، لذا لا يوجد مرور لعرضه.",
+      "badElements": "عناصر المدار غير قابلة للقراءة.",
+      "none": "لا يوجد موقع مراقَب داخل نطاق تغطيته خلال {{hours}} ساعة.",
+      "utc": "{{time}} UTC",
+      "inMinutes": "بعد {{minutes}} دقيقة",
+      "inHours": "بعد {{hours}} ساعة و{{minutes}} دقيقة",
+      "offTrack": "{{km}} كم عن المسار الأرضي",
+      "swathEdge": "على حافة الشريط",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "النوع",
+        "operator": "المشغّل",
+        "over": "فوق",
+        "ocean": "المحيط",
+        "altBand": "نطاق الارتفاع",
+        "inclination": "الميل",
+        "velocity": "السرعة",
+        "types": {
+          "sar": "تصوير SAR",
+          "optical": "تصوير بصري",
+          "military": "عسكري",
+          "sigint": "SIGINT",
+          "signals": "استخبارات الإشارات"
+        }
+      },
+      "tooOld_zero": "عمر عناصر المدار {{count}} يوم، وهي أقدم من أن يُحسب بها المرور.",
+      "tooOld_one": "عمر عناصر المدار {{count}} يوم، وهي أقدم من أن يُحسب بها المرور.",
+      "tooOld_two": "عمر عناصر المدار {{count}} يوم، وهي أقدم من أن يُحسب بها المرور.",
+      "tooOld_few": "عمر عناصر المدار {{count}} أيام، وهي أقدم من أن يُحسب بها المرور.",
+      "tooOld_many": "عمر عناصر المدار {{count}} يومًا، وهي أقدم من أن يُحسب بها المرور.",
+      "tooOld_other": "عمر عناصر المدار {{count}} يوم، وهي أقدم من أن يُحسب بها المرور.",
+      "count_zero": "{{count}} موقع داخل نطاق تغطية {{family}}",
+      "count_one": "{{count}} موقع داخل نطاق تغطية {{family}}",
+      "count_two": "{{count}} موقع داخل نطاق تغطية {{family}}",
+      "count_few": "{{count}} مواقع داخل نطاق تغطية {{family}}",
+      "count_many": "{{count}} موقعًا داخل نطاق تغطية {{family}}",
+      "count_other": "{{count}} موقع داخل نطاق تغطية {{family}}",
+      "passes_zero": "{{count}} مرور",
+      "passes_one": "{{count}} مرور",
+      "passes_two": "{{count}} مرور",
+      "passes_few": "{{count}} مرورات",
+      "passes_many": "{{count}} مرورًا",
+      "passes_other": "{{count}} مرور"
+    },
     "sheet": {
       "heading": "أدلة صور فضائية",
       "window": "آخر {{days}} يوم والـ {{hours}} ساعة القادمة",
@@ -5555,6 +5640,38 @@
     },
     "target": {
       "acquired": "التُقطت {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "صور الأقمار الصناعية",
+      "loading": "جارٍ فحص أرشيفات الأقمار الصناعية…",
+      "latest": "أحدث صورة",
+      "nextPass": "المرور التالي",
+      "noImage": "لم يُعثر على صورة حديثة",
+      "noPass": "لا مرور متوقع خلال 72 ساعة",
+      "openEvidence": "فتح الأدلة",
+      "imageAlt": "منظر فضائي من {{source}}",
+      "unavailable": "تعذّر تحميل صور الأقمار الصناعية.",
+      "fire": {
+        "title": "كشف الحرائق عبر الأقمار الصناعية",
+        "detected": "تم الكشف",
+        "satellite": "القمر الصناعي",
+        "confidence": "درجة الثقة",
+        "confidenceHigh": "عالية",
+        "confidenceNominal": "عادية",
+        "confidenceLow": "منخفضة",
+        "power": "قوة الحريق",
+        "powerValue": "{{value}} ميجاوات",
+        "region": "المنطقة",
+        "source": "المصدر",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "الفسيفساء اليومية",
+        "mosaicLoading": "جاري التحقق من NASA GIBS…",
+        "mosaicCaption": "مركب من مسارات {{source}} لليوم {{date}}؛ قد يكون الحريق مختفياً بسبب السحب أو الدخان.",
+        "mosaicNone": "لا توجد فسيفساء {{source}} من NASA GIBS لـ {{date}}.",
+        "mosaicNoLayer": "لا توجد فسيفساء يومية متاحة لهذا القمر الصناعي.",
+        "mosaicUnavailable": "لم يتم تحميل الفسيفساء اليومية.",
+        "mosaicAlt": "فسيفساء NASA GIBS اليومية {{source}} لـ {{date}}"
+      }
     }
   },
   "settings": {

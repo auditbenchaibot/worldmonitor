@@ -1209,7 +1209,12 @@
       "shareLink": "링크 공유",
       "shareStory": "기사 공유",
       "printPdf": "인쇄 / PDF",
-      "exportData": "데이터 내보내기"
+      "exportData": "데이터 내보내기",
+      "sources": {
+        "summary": "출처와 기간 · {{count}}개 계열",
+        "note": "출처마다 기간이 다르며 24시간 합계가 아닙니다.",
+        "footer": "CII/CRI 입력값이 아닙니다."
+      }
     },
     "relatedAssets": {
       "pipeline": "파이프라인",
@@ -3165,6 +3170,34 @@
         "change365": "12개월간",
         "measured": "측정일",
         "sparkline": "36개월 수위"
+      },
+      "nextPass": {
+        "label": "다음 ICESat-2 통과",
+        "loading": "불러오는 중…",
+        "at": "{{date}} ({{epoch}} 궤도 데이터 기준 예측, 구름이 라이다를 가릴 수 있음)",
+        "none": "이 기간에는 측정 없음({{date}}까지), {{epoch}} 궤도 데이터",
+        "unavailable": "궤도 데이터를 사용할 수 없음"
+      },
+      "siteContext": {
+        "label": "이 지점의 전략 저수지"
+      },
+      "energyContext": {
+        "heading": "전략 저수지",
+        "hydro": "수력 발전 1차 에너지의 {{share}}%"
+      },
+      "countryEvidence": {
+        "heading": "수위",
+        "empty": "이 나라의 전략 저수지 중 최근 통과 시 계절 기준선을 벗어난 곳은 없습니다.",
+        "measured": "{{date}} 측정"
+      },
+      "card": {
+        "measured": "측정 {{date}} · {{age}}",
+        "noCrossing": "이 기간에 없음({{date}}까지)",
+        "crossing": "ICESat-2 예상 통과",
+        "summary": "저수지 {{total}}곳 중 {{beyond}}곳이 계절 기준선 밖",
+        "latestPass": "최근 ICESat-2 통과 {{date}}",
+        "sparkline": "36개월 수위, 계절 기준선은 점선",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC). 날짜가 있는 통과의 라이다 수면 높이로, 실시간 값이나 저수량이 아닙니다."
       }
     },
     "gridDisruptionClock": {
@@ -3254,7 +3287,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED (검증됨)",
       "gdelt": "GDELT",
       "records": "개 기록",
       "mediaSignal": "미확인 미디어 신호",
@@ -5274,6 +5306,44 @@
       "away": "{{km}} km",
       "densityTip_other": "{{start}}부터의 통과 {{count}}개 · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "감시 중인 지점 · 다음 {{hours}}시간",
+      "projecting": "통과 계산 중…",
+      "notLoaded": "위성을 다시 클릭하세요. 궤도 요소가 로드되지 않았습니다.",
+      "failed": "위성을 다시 클릭하여 재시도하세요. 통과 계산에 실패했습니다.",
+      "viewFailed": "위성을 다시 클릭하여 재시도하세요. 지점 목록을 로드할 수 없었습니다.",
+      "unavailable": "위성을 다시 클릭하여 재시도하세요. 통과 기하 계산에서 이 궤도 요소를 사용할 수 없습니다.",
+      "signals": "신호정보 위성입니다. 영상 센서가 없어 지상 관측 범위를 모델링하지 않습니다.",
+      "noProfile": "이 위성의 센서 프로필이 없어 지상 관측 범위를 모델링하지 않습니다.",
+      "geostationary": "정지궤도: 한 경도 위에 고정되어 있어 통과 목록이 없습니다.",
+      "badElements": "궤도 요소를 읽을 수 없습니다.",
+      "none": "{{hours}}시간 내에 관측 범위에 들어오는 감시 중인 지점이 없습니다.",
+      "utc": "{{time}} UTC",
+      "inMinutes": "{{minutes}}분 후",
+      "inHours": "{{hours}}시간 {{minutes}}분 후",
+      "offTrack": "지상 궤적에서 {{km}} km",
+      "swathEdge": "관측폭 가장자리",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "유형",
+        "operator": "운영 기관",
+        "over": "상공",
+        "ocean": "해양",
+        "altBand": "고도 범위",
+        "inclination": "경사각",
+        "velocity": "속도",
+        "types": {
+          "sar": "SAR 촬상",
+          "optical": "광학 촬상",
+          "military": "군사",
+          "sigint": "SIGINT",
+          "signals": "신호정보"
+        }
+      },
+      "tooOld_other": "궤도 요소가 {{count}}일 전 것이어서 통과를 계산하기에는 너무 오래되었습니다.",
+      "count_other": "{{family}} 관측 범위 내 {{count}}개 지점",
+      "passes_other": "{{count}}회 통과"
+    },
     "sheet": {
       "heading": "위성 영상 증거",
       "window": "지난 {{days}}일, 향후 {{hours}}시간",
@@ -5390,6 +5460,38 @@
     },
     "target": {
       "acquired": "촬영 {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "위성 영상",
+      "loading": "위성 아카이브 확인 중…",
+      "latest": "최신 영상",
+      "nextPass": "다음 통과",
+      "noImage": "최근 영상을 찾을 수 없음",
+      "noPass": "72시간 내 통과 예정 없음",
+      "openEvidence": "증거 열기",
+      "imageAlt": "{{source}} 위성 화면",
+      "unavailable": "위성 영상을 불러오지 못했습니다.",
+      "fire": {
+        "title": "위성 화재 감지",
+        "detected": "감지됨",
+        "satellite": "위성",
+        "confidence": "신뢰도",
+        "confidenceHigh": "높음",
+        "confidenceNominal": "보통",
+        "confidenceLow": "낮음",
+        "power": "화재 강도",
+        "powerValue": "{{value}} MW",
+        "region": "지역",
+        "source": "출처",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "일일 모자이크",
+        "mosaicLoading": "NASA GIBS 확인 중…",
+        "mosaicCaption": "{{date}}의 {{source}} 패스에 대한 일일 합성 이미지입니다. 화재가 구름이나 연기에 가려져 있을 수 있습니다.",
+        "mosaicNone": "NASA GIBS에 {{date}}의 {{source}} 모자이크가 없습니다.",
+        "mosaicNoLayer": "이 위성에 사용 가능한 일일 모자이크가 없습니다.",
+        "mosaicUnavailable": "일일 모자이크를 불러올 수 없습니다.",
+        "mosaicAlt": "NASA GIBS {{source}} {{date}} 일일 모자이크"
+      }
     }
   },
   "settings": {

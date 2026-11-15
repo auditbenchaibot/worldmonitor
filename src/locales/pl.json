@@ -1285,7 +1285,12 @@
       "printPdf": "Drukuj / PDF",
       "exportData": "Eksportuj dane",
       "moreActions": "Więcej działań",
-      "shareLink": "Udostępnij link"
+      "shareLink": "Udostępnij link",
+      "sources": {
+        "summary": "Źródła i okna · {{count}} grup",
+        "note": "Okna źródeł się różnią; to nie jest suma z 24 godzin.",
+        "footer": "Nie jest danymi wejściowymi CII/CRI."
+      }
     },
     "relatedAssets": {
       "pipeline": "Rurociąg",
@@ -3228,6 +3233,34 @@
         "change365": "W 12 miesięcy",
         "measured": "Pomiar",
         "sparkline": "Poziom wody w ciągu 36 miesięcy"
+      },
+      "nextPass": {
+        "label": "Następny przelot ICESat-2",
+        "loading": "Ładowanie…",
+        "at": "{{date}} (prognoza z danych orbitalnych z {{epoch}}; chmury mogą zablokować lidar)",
+        "none": "Brak pomiaru w tym okresie (do {{date}}); dane orbitalne z {{epoch}}",
+        "unavailable": "Dane orbitalne niedostępne"
+      },
+      "siteContext": {
+        "label": "Strategiczny zbiornik w tym miejscu"
+      },
+      "energyContext": {
+        "heading": "Strategiczne zbiorniki",
+        "hydro": "Energia wodna {{share}}% energii pierwotnej"
+      },
+      "countryEvidence": {
+        "heading": "Poziomy wody",
+        "empty": "Żaden strategiczny zbiornik w tym kraju nie wykracza przy ostatnim przelocie poza swoją sezonową linię bazową.",
+        "measured": "Zmierzono {{date}}"
+      },
+      "card": {
+        "measured": "Zmierzono {{date}} · {{age}}",
+        "noCrossing": "brak w tym oknie (do {{date}})",
+        "crossing": "Przewidywany przelot ICESat-2",
+        "summary": "{{beyond}} z {{total}} zbiorników poza bazą sezonową",
+        "latestPass": "ostatni przelot ICESat-2 {{date}}",
+        "sparkline": "Poziom z 36 miesięcy z bazą sezonową jako linią przerywaną",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC). Lidarowe poziomy lustra wody z datowanych przelotów, nie odczyty na żywo ani objętości."
       }
     },
     "gridDisruptionClock": {
@@ -3316,7 +3349,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED (zweryfikowany)",
       "gdelt": "GDELT",
       "records": "wpisów",
       "mediaSignal": "Niezweryfikowany sygnał medialny",
@@ -5361,6 +5393,53 @@
       "densityTip_many": "{{count}} przejść od {{start}} · {{names}}",
       "densityTip_other": "{{count}} przejścia od {{start}} · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "Monitorowane miejsca · kolejne {{hours}} h",
+      "projecting": "Obliczanie przelotów…",
+      "notLoaded": "Kliknij satelitę ponownie; elementy orbity nie są załadowane.",
+      "failed": "Kliknij satelitę ponownie, aby ponowić próbę; obliczenie przelotów nie powiodło się.",
+      "viewFailed": "Kliknij satelitę ponownie, aby ponowić próbę; lista miejsc nie została załadowana.",
+      "unavailable": "Kliknij satelitę ponownie, aby ponowić próbę; geometria przelotów odrzuciła te elementy orbity.",
+      "signals": "Satelita rozpoznania sygnałowego. Brak sensora obrazującego, więc pokrycie terenu nie jest modelowane.",
+      "noProfile": "Brak profilu sensora dla tego satelity, więc jego pokrycie terenu nie jest modelowane.",
+      "geostationary": "Geostacjonarny: stały nad jedną długością geograficzną, więc brak przelotów do wyświetlenia.",
+      "badElements": "Elementy orbity są nieczytelne.",
+      "none": "W ciągu {{hours}} h żadne monitorowane miejsce nie znajdzie się w obszarze pokrycia.",
+      "utc": "{{time}} UTC",
+      "inMinutes": "za {{minutes}} min",
+      "inHours": "za {{hours}} h {{minutes}} min",
+      "offTrack": "{{km}} km od śladu naziemnego",
+      "swathEdge": "na krawędzi pasa zobrazowania",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "Typ",
+        "operator": "Operator",
+        "over": "Nad",
+        "ocean": "Ocean",
+        "altBand": "Pas wysokości",
+        "inclination": "Inkl.",
+        "velocity": "Prędkość",
+        "types": {
+          "sar": "Obrazowanie SAR",
+          "optical": "Obrazowanie optyczne",
+          "military": "Wojskowy",
+          "sigint": "SIGINT",
+          "signals": "Rozpoznanie sygnałowe"
+        }
+      },
+      "tooOld_one": "Elementy orbity mają {{count}} dzień, są zbyt stare do obliczenia przelotów.",
+      "tooOld_few": "Elementy orbity mają {{count}} dni, są zbyt stare do obliczenia przelotów.",
+      "tooOld_many": "Elementy orbity mają {{count}} dni, są zbyt stare do obliczenia przelotów.",
+      "tooOld_other": "Elementy orbity mają {{count}} dnia, są zbyt stare do obliczenia przelotów.",
+      "count_one": "{{count}} miejsce w obszarze pokrycia {{family}}",
+      "count_few": "{{count}} miejsca w obszarze pokrycia {{family}}",
+      "count_many": "{{count}} miejsc w obszarze pokrycia {{family}}",
+      "count_other": "{{count}} miejsca w obszarze pokrycia {{family}}",
+      "passes_one": "{{count}} przelot",
+      "passes_few": "{{count}} przeloty",
+      "passes_many": "{{count}} przelotów",
+      "passes_other": "{{count}} przelotu"
+    },
     "sheet": {
       "heading": "Dowody ze zdjęć satelitarnych",
       "window": "Ostatnie {{days}} dni, następne {{hours}} h",
@@ -5489,6 +5568,38 @@
     },
     "target": {
       "acquired": "ZAREJESTROWANO {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "Zdjęcia satelitarne",
+      "loading": "Sprawdzanie archiwów satelitarnych…",
+      "latest": "Najnowsze zdjęcie",
+      "nextPass": "Następny przelot",
+      "noImage": "Nie znaleziono niedawnego zdjęcia",
+      "noPass": "Brak przelotu w ciągu 72 godzin",
+      "openEvidence": "Otwórz dowody",
+      "imageAlt": "Widok satelitarny z {{source}}",
+      "unavailable": "Nie udało się wczytać zdjęć satelitarnych.",
+      "fire": {
+        "title": "Detekcja pożarów z satelity",
+        "detected": "Wykryto",
+        "satellite": "Satelita",
+        "confidence": "Pewność",
+        "confidenceHigh": "Wysoka",
+        "confidenceNominal": "Nominalna",
+        "confidenceLow": "Niska",
+        "power": "Moc pożaru",
+        "powerValue": "{{value}} MW",
+        "region": "Region",
+        "source": "Źródło",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "Mozaika dzienna",
+        "mosaicLoading": "Sprawdzanie NASA GIBS…",
+        "mosaicCaption": "Kompozyt przejść {{source}} z dnia {{date}}; pożar może być ukryty przez chmury lub dym.",
+        "mosaicNone": "NASA GIBS nie ma mozaiki {{source}} dla {{date}}.",
+        "mosaicNoLayer": "Dla tego satelity nie ma dostępnej mozaiki dziennej.",
+        "mosaicUnavailable": "Mozaika dzienna nie została załadowana.",
+        "mosaicAlt": "Mozaika dzienna NASA GIBS {{source}} dla {{date}}"
+      }
     }
   },
   "settings": {

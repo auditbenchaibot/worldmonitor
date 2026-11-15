@@ -1212,7 +1212,12 @@
       "shareLink": "Bağlantıyı paylaş",
       "shareStory": "Hikayeyi paylas",
       "printPdf": "Yazdir / PDF",
-      "exportData": "Verileri disari aktar"
+      "exportData": "Verileri disari aktar",
+      "sources": {
+        "summary": "Kaynaklar ve aralıklar · {{count}} grup",
+        "note": "Kaynak aralıkları farklıdır; bu 24 saatlik toplam değildir.",
+        "footer": "CII/CRI girdisi değildir."
+      }
     },
     "relatedAssets": {
       "pipeline": "Boru Hatti",
@@ -3186,6 +3191,34 @@
         "change365": "12 ayda",
         "measured": "Ölçüm",
         "sparkline": "36 aylık su seviyesi"
+      },
+      "nextPass": {
+        "label": "Sonraki ICESat-2 geçişi",
+        "loading": "Yükleniyor…",
+        "at": "{{date}} ({{epoch}} tarihli yörünge verilerinden tahmin; bulutlar lidarı engelleyebilir)",
+        "none": "Bu aralıkta ölçüm yok ({{date}} tarihine kadar); {{epoch}} tarihli yörünge verileri",
+        "unavailable": "Yörünge verileri kullanılamıyor"
+      },
+      "siteContext": {
+        "label": "Bu konumdaki stratejik baraj gölü"
+      },
+      "energyContext": {
+        "heading": "Stratejik baraj gölleri",
+        "hydro": "Hidroelektrik, birincil enerjinin %{{share}} kadarı"
+      },
+      "countryEvidence": {
+        "heading": "Su seviyeleri",
+        "empty": "Bu ülkedeki hiçbir stratejik baraj gölü son geçişte mevsimsel taban çizgisinin dışında değil.",
+        "measured": "{{date}} tarihinde ölçüldü"
+      },
+      "card": {
+        "measured": "Ölçüldü {{date}} · {{age}}",
+        "noCrossing": "bu aralıkta yok ({{date}} tarihine kadar)",
+        "crossing": "Öngörülen ICESat-2 geçişi",
+        "summary": "{{total}} rezervuardan {{beyond}} tanesi mevsimsel tabanın dışında",
+        "latestPass": "son ICESat-2 geçişi {{date}}",
+        "sparkline": "36 aylık seviye, mevsimsel taban kesikli çizgi",
+        "source": "NASA ICESat-2 ATL13 / ATL06 (NSIDC). Tarihli geçişlerden lidar su yüzeyi seviyeleri; canlı okuma veya depolama hacmi değildir."
       }
     },
     "gridDisruptionClock": {
@@ -3275,7 +3308,6 @@
       }
     },
     "protest": {
-      "acledVerified": "ACLED (dogrulanmis)",
       "gdelt": "GDELT",
       "records": "kayıt",
       "mediaSignal": "Doğrulanmamış medya sinyali",
@@ -5303,6 +5335,47 @@
       "densityTip_one": "{{start}} tarihinden {{count}} geçiş · {{names}}",
       "densityTip_other": "{{start}} tarihinden {{count}} geçiş · {{names}}"
     },
+    "satelliteSites": {
+      "heading": "İzlenen konumlar · önümüzdeki {{hours}} sa",
+      "projecting": "Geçişler hesaplanıyor…",
+      "notLoaded": "Uyduya tekrar tıklayın; yörünge elemanları yüklenmedi.",
+      "failed": "Yeniden denemek için uyduya tekrar tıklayın; geçiş hesaplaması başarısız oldu.",
+      "viewFailed": "Yeniden denemek için uyduya tekrar tıklayın; konum listesi yüklenemedi.",
+      "unavailable": "Yeniden denemek için uyduya tekrar tıklayın; geçiş geometrisi bu yörünge elemanlarını reddetti.",
+      "signals": "Sinyal istihbaratı uydusu. Görüntüleyicisi olmadığından yer kapsaması modellenmiyor.",
+      "noProfile": "Bu uydu için sensör profili yok, bu nedenle yer kapsaması modellenmiyor.",
+      "geostationary": "Yerdurağan: tek bir boylamın üzerinde sabit, bu nedenle listelenecek geçiş yok.",
+      "badElements": "Yörünge elemanları okunamıyor.",
+      "none": "Önümüzdeki {{hours}} sa içinde kapsama alanına giren izlenen konum yok.",
+      "utc": "{{time}} UTC",
+      "inMinutes": "{{minutes}} dk içinde",
+      "inHours": "{{hours}} sa {{minutes}} dk içinde",
+      "offTrack": "yer izinden {{km}} km uzakta",
+      "swathEdge": "tarama şeridinin kenarında",
+      "card": {
+        "norad": "NORAD {{id}}",
+        "type": "Tür",
+        "operator": "İşletmeci",
+        "over": "Üzerinde",
+        "ocean": "Okyanus",
+        "altBand": "Yükseklik bandı",
+        "inclination": "Eğim",
+        "velocity": "Hız",
+        "types": {
+          "sar": "SAR Görüntüleme",
+          "optical": "Optik Görüntüleme",
+          "military": "Askeri",
+          "sigint": "SIGINT",
+          "signals": "Sinyal istihbaratı"
+        }
+      },
+      "tooOld_one": "Yörünge elemanları {{count}} günlük; geçişleri hesaplamak için çok eski.",
+      "tooOld_other": "Yörünge elemanları {{count}} günlük; geçişleri hesaplamak için çok eski.",
+      "count_one": "{{family}} kapsama alanında {{count}} konum",
+      "count_other": "{{family}} kapsama alanında {{count}} konum",
+      "passes_one": "{{count}} geçiş",
+      "passes_other": "{{count}} geçiş"
+    },
     "sheet": {
       "heading": "Uydu görüntü kanıtı",
       "window": "Son {{days}} gün, sonraki {{hours}} s",
@@ -5423,6 +5496,38 @@
     },
     "target": {
       "acquired": "ÇEKİLDİ {{time}} · {{resolution}}"
+    },
+    "popup": {
+      "title": "Uydu görüntüleri",
+      "loading": "Uydu arşivleri kontrol ediliyor…",
+      "latest": "En son görüntü",
+      "nextPass": "Sonraki geçiş",
+      "noImage": "Yakın tarihli görüntü bulunamadı",
+      "noPass": "72 saat içinde geçiş yok",
+      "openEvidence": "Kanıtları aç",
+      "imageAlt": "{{source}} uydu görünümü",
+      "unavailable": "Uydu görüntüleri yüklenemedi.",
+      "fire": {
+        "title": "Uydu yangın tespiti",
+        "detected": "Tespit edildi",
+        "satellite": "Uydu",
+        "confidence": "Güven",
+        "confidenceHigh": "Yüksek",
+        "confidenceNominal": "Normal",
+        "confidenceLow": "Düşük",
+        "power": "Yangın gücü",
+        "powerValue": "{{value}} MW",
+        "region": "Bölge",
+        "source": "Kaynak",
+        "sourceCredit": "NASA FIRMS",
+        "mosaicTitle": "Günlük mozaik",
+        "mosaicLoading": "NASA GIBS kontrol ediliyor…",
+        "mosaicCaption": "{{date}} tarihinde {{source}} geçişlerinin günlük bileşimi; yangın bulut veya duman tarafından gizlenebilir.",
+        "mosaicNone": "NASA GIBS'te {{date}} tarihi için {{source}} mozaiği bulunmuyor.",
+        "mosaicNoLayer": "Bu uydu için günlük mozaik mevcut değildir.",
+        "mosaicUnavailable": "Günlük mozaik yüklenemedi.",
+        "mosaicAlt": "NASA GIBS {{source}} {{date}} günlük mozaiği"
+      }
     }
   },
   "settings": {
